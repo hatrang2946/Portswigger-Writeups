@@ -11,7 +11,7 @@ Status: Solved
 Display Oracle version string using UNION attack  
 
 ## Background  
-On **Oracle** databases, every `SELECT` statement must specify a table to select `FROM`. If your `UNION SELECT` attack does not query from a table, you will still need to include the `FROM` keyword followed by a valid table name.
+On **Oracle** databases, every `SELECT` statement must specify a table to select `FROM`. If your `UNION SELECT` attack does not query from a table, you will still need to include the `FROM` keyword followed by a valid table name.  
 There is a built-in table on **Oracle** called `dual` which you can use for this purpose.
 **Example query:** 
 ```sql
