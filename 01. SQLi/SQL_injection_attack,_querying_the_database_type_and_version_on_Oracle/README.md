@@ -35,9 +35,11 @@ UNION SELECT 'abc' FROM dual
 ```
 
 ## Steps  
-Firstly, I choose Gifts for category 
-In Burp Suite, I send GET request to Repeater
-I add 
+### 1. Establish a baseline  
+Firstly, I choose Gifts as category  
+In Burp Suite, I intercept this request and send it to Repeater  
+
+### 2. 
 ```text
 ' UNION ORDER BY 1--
 ```
