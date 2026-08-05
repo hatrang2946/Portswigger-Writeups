@@ -13,8 +13,20 @@ Retrieve the Oracle database version using UNION-based SQL injection
 ## Background  
 ### UNION-based SQL injection  
 `UNION` combines the results of two `SELECT` query into a single result set  
-The queries before and after `UNION` must have:
+The queries before and after `UNION` must have the same number of columns and same data types
 
+### Finding the number of columns  
+A common technique is using  
+```text
+ORDER BY 1
+ORDER BY 2
+ORDER BY 3
+...
+ORDER BY n
+```  
+to know the number of columns 
+
+### Oracle-specific note
 On **Oracle** databases, every `SELECT` statement must specify a table to select `FROM`. If your `UNION SELECT` attack does not query from a table, you will still need to include the `FROM` keyword followed by a valid table name.  
 There is a built-in table on **Oracle** called `dual` which you can use for this purpose.
 **Example query:** 
