@@ -50,12 +50,16 @@ I got that there were 2 columns
 ### 3. 
 Since there were 2 columns, I injected:   
 ```text
-'UNION SELECT NULL,NULL FROM dual--
+' UNION SELECT NULL,NULL FROM dual--
 ```
 
 ### 4. Retrieve the Oracle version  
 According to [SQL cheat sheet](https://portswigger.net/web-security/sql-injection/cheat-sheet), I replaced **NULL** with **banner** and **dual** with **v$version**  
 The query will become:   
 ```text
-'UNION SELECT banner,NULL FROM v$version--
+' UNION SELECT banner,NULL FROM v$version--
 ```
+I got this result:  
+![Version](img/04-version.png)
+And the lab was solved
+![Lab solved](img/05-lab-solved.png)
