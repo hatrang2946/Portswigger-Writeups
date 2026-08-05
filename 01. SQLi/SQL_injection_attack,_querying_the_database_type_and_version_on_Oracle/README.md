@@ -12,7 +12,9 @@ Retrieve the Oracle database version using UNION-based SQL injection
 
 ## Background  
 ### UNION-based SQL injection  
-`UNION` combines the results of two `SELECT` query into a single result set
+`UNION` combines the results of two `SELECT` query into a single result set  
+The queries before and after `UNION` must have:
+
 On **Oracle** databases, every `SELECT` statement must specify a table to select `FROM`. If your `UNION SELECT` attack does not query from a table, you will still need to include the `FROM` keyword followed by a valid table name.  
 There is a built-in table on **Oracle** called `dual` which you can use for this purpose.
 **Example query:** 
