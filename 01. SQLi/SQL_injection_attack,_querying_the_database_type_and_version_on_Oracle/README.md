@@ -12,8 +12,8 @@ Retrieve the Oracle database version using UNION-based SQL injection
 
 ## Background  
 ### UNION-based SQL injection  
-`UNION` combines the results of two `SELECT` query into a single result set  
-The queries before and after `UNION` must have the same number of columns and same data types
+`UNION` combines the results of two `SELECT` queries into a single result set  
+The queries before and after `UNION` must have the same number of columns and compatible data types
 
 ### Finding the number of columns  
 A common technique is using  
@@ -24,7 +24,7 @@ ORDER BY 3
 ...
 ORDER BY n
 ```  
-to know the number of columns 
+to determine the number of columns 
 
 ### Oracle-specific note
 On **Oracle** databases, every `SELECT` statement must specify a table to select `FROM`. If your `UNION SELECT` attack does not query from a table, you will still need to include the `FROM` keyword followed by a valid table name.  
@@ -36,18 +36,19 @@ UNION SELECT 'abc' FROM dual
 
 ## Steps  
 ### 1. Establish a baseline  
-Firstly, I chose Gifts as category  
+Firstly, I chose the Gifts category  
 In Burp Suite, I intercepted this request and sent it to Repeater  
 ![Request](img/03-request.png)  
 
 ### 2. Determine the number of columns
 By injecting the following payloads one by one: 
 ```text
-' UNION ORDER BY n--
+' UNION ORDER BY 1--
+...
 ```
 I got that there were 2 columns  
 
-### 3. 
+### 3. Confirm UNION works
 Since there were 2 columns, I injected:   
 ```text
 ' UNION SELECT NULL,NULL FROM dual--
@@ -59,7 +60,7 @@ The query will become:
 ```text
 ' UNION SELECT banner,NULL FROM v$version--
 ```
-I got this result:  
+The Oracle version string was retrieved:    
 ![Version](img/04-version.png)
-And the lab was solved
+And the lab was solved  
 ![Lab solved](img/05-lab-solved.png)
