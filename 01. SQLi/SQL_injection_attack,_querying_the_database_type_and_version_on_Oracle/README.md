@@ -36,13 +36,26 @@ UNION SELECT 'abc' FROM dual
 
 ## Steps  
 ### 1. Establish a baseline  
-Firstly, I choose Gifts as category  
-In Burp Suite, I intercept this request and send it to Repeater  
+Firstly, I chose Gifts as category  
+In Burp Suite, I intercepted this request and sent it to Repeater  
+![Request](img/03-request.png)  
 
 ### 2. Determine the number of columns
+By injecting the following payloads one by one: 
 ```text
-' UNION ORDER BY 1--
+' UNION ORDER BY n--
 ```
-then using 2, 3 to know the number of columns of the table
+I got that there were 2 columns  
 
-Because this lab uses Oracle, it needs `FROM`. Then I inserted dual
+### 3. 
+Since there were 2 columns, I injected:   
+```text
+'UNION SELECT NULL,NULL FROM dual--
+```
+
+### 4. Retrieve the Oracle version  
+According to [SQL cheat sheet](https://portswigger.net/web-security/sql-injection/cheat-sheet), I replaced **NULL** with **banner** and **dual** with **v$version**  
+The query will become:   
+```text
+'UNION SELECT banner,NULL FROM v$version--
+```
