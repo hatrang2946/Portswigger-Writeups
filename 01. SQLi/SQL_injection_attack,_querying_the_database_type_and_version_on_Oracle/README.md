@@ -39,7 +39,7 @@ UNION SELECT 'abc' FROM dual
 Firstly, I choose Gifts as category  
 In Burp Suite, I intercept this request and send it to Repeater  
 
-### 2. 
+### 2. Determine the number of columns
 ```text
 ' UNION ORDER BY 1--
 ```
