@@ -8,7 +8,8 @@ Status: Solved
 ![Lab description](img/02-lab-description.png)  
 
 ## Objectives  
-Retrieve MySQL and Microsoft database version string using UNION-based SQL injection
+Retrieve the MySQL and Microsoft database version using UNION-based SQL injection
+
 ## Background  
 
 ## Steps  
