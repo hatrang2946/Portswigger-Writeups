@@ -10,6 +10,7 @@ Status: Solved
 ## Objectives  
 Retrieve the MySQL and Microsoft database version using UNION-based SQL injection
 
-## Background  
+## Background    
+It is better to use `#` to comment instead of `--` in this lab due to MySQL and Microsoft
 
 ## Steps  
