@@ -43,7 +43,7 @@ In Burp Suite, I intercepted this request and sent it to Repeater
 ### 2. Determine the number of columns
 By injecting the following payloads one by one: 
 ```text
-' UNION ORDER BY 1--
+' ORDER BY 1--
 ...
 ```
 I got that there were 2 columns  
