@@ -56,6 +56,6 @@ The query will become:
 ' UNION SELECT @@version,NULL#
 ```
 The MySQL and Microsoft version string was retrieved:    
-![Version](img/04-version.png)
+![Version](img/04-version.png)  
 And the lab was solved  
 ![Lab solved](img/05-lab-solved.png)
