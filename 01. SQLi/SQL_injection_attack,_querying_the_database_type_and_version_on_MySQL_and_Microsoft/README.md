@@ -29,4 +29,33 @@ to determine the number of columns
 ### MySQL and Microsoft specific note
 It is better to use `#` to comment instead of `--` in this lab
 
-## Steps  
+## Steps    
+### 1. Establish a baseline  
+Firstly, I chose the Pets category  
+In Burp Suite, I intercepted this request and sent it to Repeater  
+![Request](img/03-request.png)  
+
+### 2. Determine the number of columns
+By injecting the following payloads one by one: 
+```text
+' ORDER BY 1#
+...
+```
+I got that there were 2 columns  
+
+### 3. Confirm UNION works
+Since there were 2 columns, I injected:   
+```text
+' UNION SELECT NULL,NULL#
+```
+
+### 4. Retrieve the MySQL and Microsoft version  
+According to [SQL cheat sheet](https://portswigger.net/web-security/sql-injection/cheat-sheet), I replaced **NULL** with **@@version**
+The query will become:   
+```text
+' UNION SELECT @@version,NULL#
+```
+The MySQL and Microsoft version string was retrieved:    
+![Version](img/04-version.png)
+And the lab was solved  
+![Lab solved](img/05-lab-solved.png)
