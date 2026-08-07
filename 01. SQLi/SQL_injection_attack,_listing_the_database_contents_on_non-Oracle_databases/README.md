@@ -8,6 +8,7 @@ Status: Solved
 ![Lab description](img/02-lab-description.png)  
 
 ## Objectives  
+Retrieve contents on non-Oracle databases and log in as `administrator` using UNION-based 
 
 ## Background  
 
