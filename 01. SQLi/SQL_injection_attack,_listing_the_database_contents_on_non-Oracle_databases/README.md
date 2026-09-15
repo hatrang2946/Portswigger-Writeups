@@ -27,11 +27,10 @@ ORDER BY n
 to determine the number of columns that are being returned by the query  
 
 ### [SQLi cheat sheet](https://portswigger.net/web-security/sql-injection/cheat-sheet)
-Inject database version in cheat sheet one by one. 
-Get the result that the database of this lab is PostgreSQL
+I tested database-specific version queries from the SQL injection cheat sheet and identified the DBMS as **PostgreSQL**  
 
 ### [PostgreSQL information_schema.tables](https://www.postgresql.org/docs/current/infoschema-columns.html)
-Use `table_name` and `column_name` to get the information of data
+PostgreSQL provides metadata through the `information_schema`. I used `information_schema.tables` to enumerate table names and `information_schema.columns` to enumerate column names.
 
 ## Steps
 ### 1. Establish a baseline  
@@ -59,7 +58,7 @@ I injected
 '+UNION+SELECT+table_name,NULL+FROM+information_schema.tables--
 ```
 to get the list of the the table.  
-I found the table related to user and it was: **users_qkxziz**  
+Among the returned table names, I identified the user table: **users_qkxziz**  
 
 Then, I injected  
 ```text
