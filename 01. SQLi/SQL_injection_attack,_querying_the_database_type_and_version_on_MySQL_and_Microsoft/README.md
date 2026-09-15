@@ -1,4 +1,4 @@
-<img width="1352" height="530" alt="image" src="https://github.com/user-attachments/assets/fb26e45a-1c2b-4842-b686-5952dccc8aac" /># Write-up: SQL injection attack, querying the database type and version on MySQL and Microsoft  
+# Write-up: SQL injection attack, querying the database type and version on MySQL and Microsoft  
 ![Homepage](img/01-homepage.png)  
 Lab-link: https://portswigger.net/web-security/sql-injection/examining-the-database/lab-querying-database-version-mysql-microsoft  
 Difficulty: Practitioner  
