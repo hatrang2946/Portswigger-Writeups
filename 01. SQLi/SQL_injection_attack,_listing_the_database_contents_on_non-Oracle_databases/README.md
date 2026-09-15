@@ -30,7 +30,7 @@ to determine the number of columns that are being returned by the query
 Inject database version in cheat sheet one by one. 
 Get the result that the database of this lab is PostgreSQL
 
-### [PostgreSQL](https://www.postgresql.org/docs/current/infoschema-columns.html)
+### [PostgreSQL information_schema.tables](https://www.postgresql.org/docs/current/infoschema-columns.html)
 Use `table_name` and `column_name` to get the information of data
 
 ## Steps
@@ -55,14 +55,14 @@ Since there were 2 columns, I injected:
 
 ### 4. Get admin's password  
 I injected   
-```sql
+```text
 '+UNION+SELECT+table_name,'a'+FROM+information_schema.tables--
 ```
 to get the list of the the table.  
 I found the table related to user and it was: **users_qkxziz**  
 
 Then, I injected  
-```sql
+```text
 '+UNION+SELECT+column_name,NULL+FROM+information_schema.columns+WHERE+table_name='users_qkxziz'--
 ```
 I got 2 columns: **username_ncyvwl** and **password_hbgsyg**  
