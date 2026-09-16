@@ -28,7 +28,7 @@ ORDER BY n
 to determine the number of columns that are being returned by the query  
 
 ### [SQLi cheat sheet](https://portswigger.net/web-security/sql-injection/cheat-sheet)
-According to Oracle database, we use `all_tables` to extract the list of the tables and `all_tab_columns` the list of the columns    
+According to Oracle database, we use `all_tables` to extract the list of tables and `all_tab_columns` the list of columns    
 
 ## Steps
 ### 1. Establish a baseline  
