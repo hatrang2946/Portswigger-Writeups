@@ -66,7 +66,7 @@ Then, I injected:
 ```
 I got 2 columns: **username_ncyvwl** and **password_hbgsyg**  
 
-Now we injected:    
+Now I injected:    
 ```text
 '+UNION+SELECT+username_ncyvwl,password_hbgsyg+FROM+users_qkxziz--
 ```
