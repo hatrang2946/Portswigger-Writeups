@@ -41,7 +41,7 @@ By injecting the following payloads one by one:
 I got that there were 3 columns  
 
 ### 3. Attack with UNION-based SQLi
-Since there were 2 columns, the `UNION SELECT` statement must also return 3 columns.  
+Since there were 3 columns, the `UNION SELECT` statement must also return 3 columns.  
 I injected  
 ```text
 '+UNION+SELECT+NULL,NULL,NULL--
