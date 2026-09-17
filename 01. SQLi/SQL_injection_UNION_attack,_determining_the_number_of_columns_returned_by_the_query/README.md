@@ -42,7 +42,7 @@ I got that there were 3 columns
 
 ### 3. Attack with UNION-based SQLi
 Since there were 3 columns, the `UNION SELECT` statement must also return 3 columns.  
-I injected  
+I injected:  
 ```text
 '+UNION+SELECT+NULL,NULL,NULL--
 ```
