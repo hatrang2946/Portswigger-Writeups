@@ -6,7 +6,7 @@ Status: Solved
 
 ## Lab description  
 ![Lab description](img/02-lab-description.png)  
-
+ 
 ## Objectives  
 Retrieve contents on Oracle databases and log in as `administrator` using UNION-based SQL injection
 
