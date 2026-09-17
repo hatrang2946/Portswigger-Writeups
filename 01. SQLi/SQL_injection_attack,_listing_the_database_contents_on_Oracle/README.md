@@ -10,7 +10,6 @@ Status: Solved
 ## Objectives  
 Retrieve contents on Oracle databases and log in as `administrator` using UNION-based SQL injection
 
-
 ## Background  
 ### UNION-based SQL injection  
 `UNION` combines the results of two `SELECT` queries into a single result set  
