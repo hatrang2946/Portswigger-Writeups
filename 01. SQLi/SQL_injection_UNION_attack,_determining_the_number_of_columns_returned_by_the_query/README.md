@@ -28,7 +28,7 @@ to determine the number of columns that are being returned by the query
 
 ## Steps
 ### 1. Establish a baseline  
-Firstly, I chose the Gifts category  
+Firstly, I chose the Pets category  
 In Burp Suite, I intercepted this request and sent it to Repeater  
 ![Request](img/03-request.png)  
 
