@@ -1,7 +1,7 @@
 # Write-up: SQL injection UNION attack, finding a column containing text   
 ![Homepage](img/01-homepage.png)  
 Lab-link: https://portswigger.net/web-security/sql-injection/union-attacks/lab-find-column-containing-text  
-Difficulty: Practitioner  
+Difficulty: Practitioner   
 Status: Solved  
 
 ## Lab description  
