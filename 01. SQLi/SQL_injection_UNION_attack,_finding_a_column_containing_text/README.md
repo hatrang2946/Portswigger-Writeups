@@ -58,7 +58,7 @@ The lab provided the string `xNNySU`. I tested each column by replacing `NULL` w
 ```text
 '+UNION+SELECT+NULL,NULL,'xNNySU'--
 ```
-The payload targeting the second column returned `200 OK`, while the other payloads resulted in an error. Therefore, the second column is compatible with string data.  
+The payload targeting the second column returned `200 OK`, while the other payloads resulted in an error. Therefore, the second column was compatible with string data.  
 
 And the lab was solved   
 ![Lab solved](img/04-lab-solved.png)
