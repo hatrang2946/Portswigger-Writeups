@@ -28,7 +28,7 @@ to determine the number of columns that are being returned by the query
 
 ### [SQL injection cheat sheet](https://portswigger.net/web-security/sql-injection/cheat-sheet)  
 I tested database-specific version queries from the SQL injection cheat sheet and identified the DBMS as **Oracle**  
-We use **String concatenation** to concatenate multiple strings to a single string  
+**String concatenation** can be used to combine multiple string values into a single value. In **Oracle**, the `||` operator is used for string concatenation. 
 
 ## Steps
 ### 1. Establish a baseline  
@@ -59,11 +59,11 @@ I tested each column by replacing `NULL` with string `'a'` one by one:
 ```text
 '+UNION+SELECT+NULL,'a'--
 ```
-The payload targeting the second column returned `200 OK`, while another resulted in an error. Therefore, the second column was compatible with string data.  
+The payload targeting the second column returned `200 OK`, while the first resulted in an error. Therefore, the second column was compatible with string data.  
 
 ### 5. Retrieve the list of usernames and passwords  
-Since the second columns was compatible with string data, I replaced `NULL` with string data  
-Since there were 2 columns: `username` and `password`; 1 table: `user`. I injected:  
+Since only the second column was compatible with string data, I needed to retrieve both the username and password in a single column. I used Oracle's `||` operator to concatenate the two values with `~` as a separator.  
+The `users` table contains the `username` and `password` columns. Since only one result column was compatible with string data, I concatenated these two values into the second column.  
 ```text
 '+UNION+SELECT+NULL,username+||+'~'+||+password+FROM+users--
 ```
