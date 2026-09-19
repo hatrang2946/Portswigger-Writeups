@@ -23,19 +23,19 @@ For example:
 This difference allows the response to be used as a **Boolean oracle** during the attack.  
 
 ### `SELECT` subqueries  
-A subquery is a SQL query nested inside another query.
-In this lab, subqueries are used to check information from the `users` table:
+A subquery is a SQL query nested inside another query.  
+In this lab, subqueries are used to check information from the `users` table:  
 ```sql
 SELECT 'x' FROM users WHERE username='administrator'
 ```
-The result can then be used in a Boolean condition:
+The result can then be used in a Boolean condition:  
 ```sql
 (SELECT 'x' FROM users WHERE username='administrator')='x'
 ```
-If the condition is true, **Welcome back!** appears. 
+If the condition is true, **Welcome back!** appears.   
 
 ### Why use LIMIT 1?  
-`LIMIT 1` restricts the subquery to a single row:
+`LIMIT 1` restricts the subquery to a single row:  
 ```sql
 SELECT 'x' FROM users LIMIT 1
 ```
@@ -44,13 +44,13 @@ For this attack, we only need to know whether at least one row exists, so return
 ### `LENGTH()`  
 `LENGTH()` returns the number of characters in a string.  
 
-### `SUBSTRING()`
-`SUBSTRING()` extracts a specific part of a string using the following syntax:
-SUBSTRING(string, start, length)  
-For example: `SUBSTRING(password,1,1)`
-password: the string to extract characters from.
-1 (second parameter): the starting position of the character to extract. Positions start from 1.
-1 (third parameter): the number of characters to extract.  
+### `SUBSTRING()`  
+`SUBSTRING()` extracts a specific part of a string using the following syntax:  
+SUBSTRING(string, start, length)    
+For example: `SUBSTRING(password,1,1)`  
+password: the string to extract characters from.  
+1 (second parameter): the starting position of the character to extract. Positions start from 1.  
+1 (third parameter): the number of characters to extract.   
 
 ### Brute-force attack  
 A **brute-force attack** systematically tests possible values until the correct one is found.
