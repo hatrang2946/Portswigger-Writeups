@@ -48,9 +48,9 @@ For this attack, we only need to know whether at least one row exists, so return
 `SUBSTRING()` extracts a specific part of a string using the following syntax:  
 SUBSTRING(string, start, length)    
 For example: `SUBSTRING(password,1,1)`  
-password: the string to extract characters from.  
-1 (second parameter): the starting position of the character to extract. Positions start from 1.  
-1 (third parameter): the number of characters to extract.   
+`password`: the string to extract characters from.  
+`1` (second parameter): the starting position of the character to extract. Positions start from 1.  
+`1` (third parameter): the number of characters to extract.   
 
 ### Brute-force attack  
 A **brute-force attack** systematically tests possible values until the correct one is found.
