@@ -16,11 +16,11 @@ Blind SQL injection occurs when an application is vulnerable to SQL injection, b
 Instead, information must be inferred from differences in the application's behavior. In this lab, the presence or absence of the **Welcome back!** message is used to determine whether an injected condition is true or false  
 
 ### Conditional responses  
-A **conditional response** is a visible difference in the application's response depending on whether an SQL condition is true or false.
+A **conditional response** is a visible difference in the application's response depending on whether an SQL condition is true or false.  
 For example:  
-`' AND 1=1--` causes **Welcome back!** to appear, while:
-`' AND 1=2--` does not.
-This difference allows the response to be used as a **Boolean oracle** during the attack.
+`' AND 1=1--` causes **Welcome back!** to appear, while:  
+`' AND 1=2--` does not.  
+This difference allows the response to be used as a **Boolean oracle** during the attack.  
 
 ### `SELECT` subqueries  
 A subquery is a SQL query nested inside another query.
