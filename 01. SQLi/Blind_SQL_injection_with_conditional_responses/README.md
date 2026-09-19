@@ -61,12 +61,19 @@ Intruder attack told us that when the response for the payload from 1-19 had Wel
 ### 5. Retrieve the administrator password  
 Now, I injected:   
 ```text
-' AND (SELECT SUBSTRING(password,1,1) from users WHERE username='administrator)='a'--
+' AND (SELECT SUBSTRING(password,1,1) from users WHERE username='administrator')='a'--
 ```
-Now I chose **Add §** for 2 positions: the first number `1` in the SUBSTRING and the character `'a'`.
-I chose Pitchfork attack (analyze Pitchfork attack)
+Now I chose **Add §** for 2 positions: the first number `1` in the SUBSTRING and the character `a`.
+I chose Cluster bomb attack (analyze Cluster bomb attack)
 With payload postion **1-1**, I chose the payload type: `Numbers`, Number range From `1` To `20` Step `1`  
 ![Payload for number in Burp Intruder](img/07-payload.png) 
-With payload postion **2-'a'**, I chose the payload type: `Brute forcer`, Number range From `1` To `20` Step `1`  
-![Payload for character in Burp Intruder](img/08-payload.png)
+With payload postion **2-a**, I chose the payload type: `Brute forcer`, Number range From `1` To `20` Step `1`  
+![Payload for character in Burp Intruder](img/08-payload.png)  
 I took each value for each position in the password
+In Settings, **Grep Match** section, I cleared the list available and I added `Welcome back!` message.  
+Start attack:  
+The result was each position each character: 
+![Intruder attack for password](img/09-password.png)  
+The administrator password was: `il2mtulhg7q5dub2kqc4`  
+And the lab was solved:  
+![Lab solved](img/10-lab-solved.png)  
