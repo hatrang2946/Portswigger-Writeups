@@ -99,7 +99,7 @@ This time, **Welcome back!** did not appear
 Therefore, `1<the password length<=30`
 
 Now, I sent the request to Intruder  
-In the tab Burp Intruder, I selected the number used in `LENGTH(password)>1` as the payload position and clicked **Add §**  
+In the tab Burp Intruder, I selected the number used in `LENGTH(password)>§1§` as the payload position and clicked **Add §**  
 I chose **Sniper attack** because there was only 1 payload position  
 For the payload configuration:  
 Payload type: `Numbers`  
@@ -115,21 +115,28 @@ This means: `LENGTH(password)=20`
 ![Intruder attack: the length of password](img/06-intruder.png)  
 
 ### 5. Retrieve the administrator password  
-With the password length known, 
-Now, I injected:   
+I used the following payload to test the first character of the password:     
 ```text
 ' AND (SELECT SUBSTRING(password,1,1) from users WHERE username='administrator')='a'--
 ```
-Now I chose **Add §** for 2 positions: the first number `1` in the SUBSTRING and the character `a`.
-I chose Cluster bomb attack (analyze Cluster bomb attack)
-With payload postion **1-1**, I chose the payload type: `Numbers`, Number range From `1` To `20` Step `1`  
+I marked the character position and the character as two payload positions: `SUBSTRING(password,§1§,1)='§a§'`  
+I then used a Cluster bomb attack:
+
+Payload position 1: Numbers, from 1 to 20, step 1
+Payload position 2: Brute forcer
+I used Cluster bomb attack because there are two independent values to test:  
+The first position represents the character position in the password.  
+The second position represents the character being tested.  
+For the first payload position, I used:
+Payload type: `Numbers`  
+From `1`  
+To `30`  
+Step `1`  
 ![Payload for number in Burp Intruder](img/07-payload.png) 
-With payload postion **2-a**, I chose the payload type: `Brute forcer`, Number range From `1` To `20` Step `1`  
-![Payload for character in Burp Intruder](img/08-payload.png)  
-I took each value for each position in the password
-In Settings, **Grep Match** section, I cleared the list available and I added `Welcome back!` message.  
-Start attack:  
-The result was each position each character: 
+For the second payload position, I used Brute forcer to test possible characters.
+![Payload for character in Burp Intruder](img/08-payload.png) 
+In Settings -> **Grep Match**, I added `Welcome back!`   
+After starting the attack, I recorded the character that produced Welcome back! for each password position.  
 ![Intruder attack for password](img/09-password.png)  
 The administrator password was: `il2mtulhg7q5dub2kqc4`  
 And the lab was solved:  
