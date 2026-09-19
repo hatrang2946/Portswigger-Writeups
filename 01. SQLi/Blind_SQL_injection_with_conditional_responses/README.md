@@ -11,6 +11,21 @@ Status: Solved
 Retrieve the password of `administrator` user and log into their account  
 
 ## Background  
+### Blind SQL injection  
+Blind SQL injection occurs when an application is vulnerable to SQL injection, but the results of the injected query are not directly displayed in the response.
+
+Instead, information must be inferred from differences in the application's behavior. In this lab, the presence or absence of the **Welcome back!** message is used to determine whether an injected condition is true or false  
+
+### Conditional responses  
+A **conditional response** is a visible difference in the application's response depending on whether an SQL condition is true or false.
+For example:  
+`' AND 1=1--` causes **Welcome back!** to appear, while:
+`' AND 1=2--` does not.
+
+This difference allows the response to be used as a **Boolean oracle** during the attack.
+
+### `SELECT` subqueries  
+
 ### Brute-force attack  
 
 ### [Burp Intruder](https://portswigger.net/burp/documentation/desktop/tools/intruder)
