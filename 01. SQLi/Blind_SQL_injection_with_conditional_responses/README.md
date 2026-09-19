@@ -14,9 +14,9 @@ Retrieve the password of `administrator` user and log into their account
 ### Brute-force attack  
 
 ### [Burp Intruder](https://portswigger.net/burp/documentation/desktop/tools/intruder)
-
+Explain how Burp Intruder 
 ### Substring
-
+SUBSTRING(password,1,1): the functions of the positions  
 
 ## Steps  
 ### 1. Establish a baseline  
@@ -39,8 +39,7 @@ I injected these query respectively:
 Both responses returned **Welcome back!** message, so `user` table and `administrator` user existed  
 Why add limit 1  
  
-### 4. Retrieve the administrator password  
-#### Identify the length of password  
+### 4. Identify the length of password  
 I injected 2 payloads: 
 ```text
 ' AND (SELECT 'x' from users WHERE username='administrator' AND LENGTH(password)>1)='x'--
@@ -51,8 +50,23 @@ I injected 2 payloads:
 The first payload returned successfull response, while the second one did not. This indicated that the length of password was within in range (1,30)  
 Now, I sent the request to Intruder  
 In the tab Burp Intruder, I chose the number used to compare with the length of password and click **Add §**  
-I sent with the payload type: `Numbers`, Number range From `1` To `30` Step `1`  
+I chose **Sniper attack** (analyze Sniper attack) and sent with the payload type: `Numbers`, Number range From `1` To `30` Step `1`  
 ![Payload in Burp Intruder](img/04-payload.png)   
-In Settings, **Auto-pause attack**, I chose **Pause if an expression on the list is missing from a response** and I add `Welcome back!` message.  
-![Auto-pause attack message](img/05-message.png)
+In Settings, **Grep Match** section, I cleared the list available and I added `Welcome back!` message.  
+![Grep Match message](img/05-message.png)
 Start attack: 
+Intruder attack told us that when the response for the payload from 1-19 had Welcome back! message, but it did not appear with the payload 20. This indicated that the length of password was 20. 
+![Intruder attack: the length of password](img/06-intruder.png)  
+
+### 5. Retrieve the administrator password  
+Now, I injected:   
+```text
+' AND (SELECT SUBSTRING(password,1,1) from users WHERE username='administrator)='a'--
+```
+Now I chose **Add §** for 2 positions: the first number `1` in the SUBSTRING and the character `'a'`.
+I chose Pitchfork attack (analyze Pitchfork attack)
+With payload postion **1-1**, I chose the payload type: `Numbers`, Number range From `1` To `20` Step `1`  
+![Payload for number in Burp Intruder](img/07-payload.png) 
+With payload postion **2-'a'**, I chose the payload type: `Brute forcer`, Number range From `1` To `20` Step `1`  
+![Payload for character in Burp Intruder](img/08-payload.png)
+I took each value for each position in the password
