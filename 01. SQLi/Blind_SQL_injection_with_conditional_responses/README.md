@@ -53,8 +53,8 @@ For example: `SUBSTRING(password,1,1)`
 `1` (third parameter): the number of characters to extract.   
 
 ### Brute-force attack  
-A **brute-force attack** systematically tests possible values until the correct one is found.
-In this lab, brute force is used to test possible password lengths and characters. For example, to find the first character, the attack can test: `a-z, 0-9` 
+A **brute-force attack** systematically tests possible values until the correct one is found.  
+In this lab, brute force is used to test possible password lengths and characters. For example, to find the first character, the attack can test: `a-z, 0-9`   
 The character that produces the **Welcome back!** response is the correct one. 
 
 ### [Burp Intruder](https://portswigger.net/burp/documentation/desktop/tools/intruder)
