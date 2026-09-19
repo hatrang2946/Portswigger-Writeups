@@ -8,7 +8,7 @@ Status: Solved
 ![Lab description](img/02-lab-description.png) 
 
 ## Objectives 
-Retrieve the password of `administrator ` user and log into their account  
+Retrieve the password of `administrator` user and log into their account  
 
 ## Background  
 ### Brute-force attack  
