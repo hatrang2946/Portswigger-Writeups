@@ -13,7 +13,11 @@ Retrieve the password of `administrator` user and log into their account
 ## Background  
 ### Brute-force attack  
 
+### [Burp Intruder](https://portswigger.net/burp/documentation/desktop/tools/intruder)
+
 ### Substring
+
+
 ## Steps  
 ### 1. Establish a baseline  
 Firstly, I chose the **Pets** category
@@ -45,4 +49,10 @@ I injected 2 payloads:
 ' AND (SELECT 'x' from users WHERE username='administrator' AND LENGTH(password)>30)='x'--
 ```
 The first payload returned successfull response, while the second one did not. This indicated that the length of password was within in range (1,30)  
-Now, I sent the request to Burp Intruder  
+Now, I sent the request to Intruder  
+In the tab Burp Intruder, I chose the number used to compare with the length of password and click **Add §**  
+I sent with the payload type: `Numbers`, Number range From `1` To `30` Step `1`  
+![Payload in Burp Intruder](img/04-payload.png)   
+In Settings, **Auto-pause attack**, I chose **Pause if an expression on the list is missing from a response** and I add `Welcome back!` message.  
+![Auto-pause attack message](img/05-message.png)
+Start attack: 
