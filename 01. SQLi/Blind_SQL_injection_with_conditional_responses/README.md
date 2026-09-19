@@ -72,8 +72,8 @@ The important parameter in this lab is the `trackingId` cookie
 To determine whether `trackingId` could be manipulated with a Boolean condition, I tested 2 logically opposite payload: **TRUE** `' AND 1=1--` and **FALSE** `' AND 1=2--`  
 Both requests returned status `200 OK`.  
 However, the response body was different  
-`1=1` -> **Welcome back!** appeared
-`1=2` -> **Welcome back!** did not appear
+`1=1` -> **Welcome back!** appeared  
+`1=2` -> **Welcome back!** did not appear  
 Therefore, I colud use the presence of **Welcome back!** message to determine whether an injected SQL condition was true or false  
 
 ### 3. Confirm that `users` table and `administrator` user exist  
