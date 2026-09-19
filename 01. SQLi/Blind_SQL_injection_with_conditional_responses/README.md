@@ -120,21 +120,17 @@ I used the following payload to test the first character of the password:
 ' AND (SELECT SUBSTRING(password,1,1) from users WHERE username='administrator')='a'--
 ```
 I marked the character position and the character as two payload positions: `SUBSTRING(password,§1§,1)='§a§'`  
-I then used a Cluster bomb attack:
-
-Payload position 1: Numbers, from 1 to 20, step 1
-Payload position 2: Brute forcer
-I used Cluster bomb attack because there are two independent values to test:  
+I used **Cluster bomb attack** because there are two independent values to test:  
 The first position represents the character position in the password.  
 The second position represents the character being tested.  
-For the first payload position, I used:
+For the first payload position, I used:  
 Payload type: `Numbers`  
 From `1`  
 To `30`  
 Step `1`  
 ![Payload for number in Burp Intruder](img/07-number.png) 
-For the second payload position, I used Brute forcer to test possible characters.
-![Payload for character in Burp Intruder](img/08-character.png) 
+For the second payload position, I used Brute forcer to test possible characters.  
+![Payload for character in Burp Intruder](img/08-character.png)  
 In Settings -> **Grep Match**, I added `Welcome back!`   
 After starting the attack, I recorded the character that produced Welcome back! for each password position.  
 ![Intruder attack for password](img/09-password.png)  
