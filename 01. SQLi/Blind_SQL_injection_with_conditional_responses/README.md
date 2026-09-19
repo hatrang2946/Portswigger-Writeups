@@ -132,9 +132,9 @@ Payload type: `Numbers`
 From `1`  
 To `30`  
 Step `1`  
-![Payload for number in Burp Intruder](img/07-payload.png) 
+![Payload for number in Burp Intruder](img/07-number.png) 
 For the second payload position, I used Brute forcer to test possible characters.
-![Payload for character in Burp Intruder](img/08-payload.png) 
+![Payload for character in Burp Intruder](img/08-character.png) 
 In Settings -> **Grep Match**, I added `Welcome back!`   
 After starting the attack, I recorded the character that produced Welcome back! for each password position.  
 ![Intruder attack for password](img/09-password.png)  
