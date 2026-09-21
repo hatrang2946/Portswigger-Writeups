@@ -126,7 +126,7 @@ The second position represents the character being tested.
 For the first payload position, I used:  
 Payload type: `Numbers`  
 From `1`  
-To `30`  
+To `20`  
 Step `1`  
 ![Payload for number in Burp Intruder](img/07-number.png) 
 For the second payload position, I used Brute forcer to test possible characters.  
