@@ -69,7 +69,7 @@ In Burp Suite, I intercepted this request and sent it to Repeater
 The important parameter in this lab is the `trackingId` cookie
 
 ### 2. Confirm the parameter is vulnerable to blind SQL injection   
-To determine whether `trackingId` could be manipulated with a Boolean condition, I tested 2 logically opposite payload: **TRUE** `' AND 1=1--` and **FALSE** `' AND 1=2--`  
+To determine whether `trackingId` could be manipulated with a Boolean condition, I tested 2 logically opposite payloads: **TRUE** `' AND 1=1--` and **FALSE** `' AND 1=2--`  
 Both requests returned status `200 OK`.  
 However, the response body was different  
 `1=1` -> **Welcome back!** appeared  
