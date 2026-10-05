@@ -12,8 +12,8 @@ Retrieve the password of `administrator` user and log into their account
 
 ## Background  
 ### Blind SQL injection  
-Blind SQL injection occurs when an application is vulnerable to SQL injection, but the results of the injected query are not directly displayed in the response.  
-Instead, information must be inferred from differences in the application's behavior. In this lab, the presence or absence of the **Welcome back!** message is used to determine whether an injected condition is true or false  
+Blind SQL injection occurs when an application is vulnerable to SQL injection, but the results of the injected query are not directly displayed in the response. Instead, information must be inferred from differences in the application's behavior.  
+In this lab, the presence or absence of the **Welcome back!** message is used to determine whether an injected condition is true or false  
 
 ### Conditional responses  
 A **conditional response** is a visible difference in the application's response depending on whether an SQL condition is true or false.  
