@@ -80,7 +80,7 @@ Then, I changed the condition to:
 '||(SELECT CASE WHEN (1=0) THEN TO_CHAR(1/0) ELSE '' END FROM dual)||'
 ```
 This returned `200 OK`    
-This confirms that I could use the error response as a true/false indicator:
+This confirms that I could use the error response as a true/false indicator:  
 `500 Internal Server Error` -> condition is true  
 `200 OK` -> condition is false   
 
