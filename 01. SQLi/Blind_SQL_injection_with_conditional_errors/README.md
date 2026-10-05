@@ -26,7 +26,7 @@ For example: `SUBSTR(password,1,1)`
 `1` (second parameter): the starting position of the character to extract. Positions start from 1.  
 `1` (third parameter): the number of characters to extract.   
 
-###[SQL injection cheat sheet](https://portswigger.net/web-security/sql-injection/cheat-sheet)
+### [SQL injection cheat sheet](https://portswigger.net/web-security/sql-injection/cheat-sheet)
 #### Use || on Oracle  
 #### Use CASE 
 ### Oracle-specific note
