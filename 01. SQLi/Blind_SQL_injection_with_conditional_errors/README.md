@@ -126,4 +126,4 @@ After starting the attack, I recorded the character that got status `500` for ea
 ![Intruder attack for password](img/08-password.png)  
 The administrator password was: `3rir5yp3sqj6nfrohoh0`  
 And the lab was solved:  
-![Lab solved](img/9-lab-solved.png)  
+![Lab solved](img/09-lab-solved.png)  
