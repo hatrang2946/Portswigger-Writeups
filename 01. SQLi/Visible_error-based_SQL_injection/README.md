@@ -34,3 +34,17 @@ The result can then be used in a Boolean condition:
 SELECT 'x' FROM users LIMIT 1
 ```
 For this attack, we only need to know whether at least one row exists, so returning multiple rows is unnecessary.
+
+## Steps   
+### 1. Establish a baseline  
+Firstly, I chose the **Pets** category
+In Burp Suite, I intercepted this request and sent it to Repeater  
+![Request](img/03-request.png)   
+The important parameter in this lab is the `trackingId` cookie    
+
+### 2. Confirm the parameter is vulnerable to blind SQL injection   
+I injected `'` index after the value of trackingId    
+For example: `TrackingId=jg7XrsaVWonmuCh0'`  
+In the response, I saw the message containing the whole query and the value of trackingId. 
+
+### 3. 
