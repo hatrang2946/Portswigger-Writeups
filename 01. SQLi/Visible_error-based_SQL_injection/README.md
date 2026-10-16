@@ -77,7 +77,7 @@ The query became:
 ' AND 1=CAST((SELECT username FROM users LIMIT 1) AS int)--
 ```
 And the response returned:
-[!Error message for administrator](img/04-administrator.png).   
+![Error message for administrator](img/04-administrator.png).   
 The returned value was administrator. Therefore, the first row returned by the query was administrator account.  
 
 ### 6. Retrieve the administrator password  
