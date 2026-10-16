@@ -16,7 +16,7 @@ Retrieve the password of `administrator` user and log into their account
 In this lab, the application does not directly display query results. However, I can extract information through the error message.  
 
 ### SQL comments   
-SQL comments can be used to ignore the remaining part of a query.
+SQL comments can be used to ignore the remaining part of a query.  
 In this lab, `--` comments out the rest of the original query, preventing the remaining SQL syntax from interfering with the injected payload.
 
 ### `SELECT` subqueries  
