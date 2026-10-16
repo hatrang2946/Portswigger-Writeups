@@ -31,7 +31,7 @@ The result can then be used in a Boolean condition:
 ```
 
 ### `CAST()`   
-CAST() converts a value from one data type to another.
+CAST() converts a value from one data type to another.  
 For example: `CAST((SELECT 1) AS int)` converts the result of subquery to an integer  
 In this lab, CAST() is used to trigger an error when the value is not a valid integer, causing the error message to reveal that value   
 
