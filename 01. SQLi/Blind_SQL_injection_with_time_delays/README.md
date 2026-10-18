@@ -36,10 +36,10 @@ The important parameter in this lab is the trackingId cookie
 ### 2. Test payload  
 I tested payloads using different database-specific time-delay techniques and string concatenation syntax  
 ![Payload 1](img/04-payload1.png)
-![Payload 2](img/04-payload2.png)
-![Payload 3](img/04-payload3.png)
-![Payload 4](img/04-payload4.png)
+![Payload 2](img/05-payload2.png)
+![Payload 3](img/06-payload3.png)
+![Payload 4](img/07-payload4.png)
 The third payload caused a noticeable delay, with a response time of approximately 10,237 milliseconds.  
-![Time delay](img/05-time-delay.png)  
+![Time delay](img/08-time-delay.png)  
 And the lab was solved  
-![Lab solved](img/06-lab-solved.png)
+![Lab solved](img/09-lab-solved.png)
