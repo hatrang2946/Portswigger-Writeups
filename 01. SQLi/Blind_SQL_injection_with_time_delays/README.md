@@ -12,8 +12,12 @@ Cause the lab to delay 10 seconds
 
 ## Background  
 ### Blind SQL injection  
-Blind SQL injection occurs when an application is vulnerable to SQL injection, but the results of the injected query are not directly displayed in the response. Instead, information must be inferred from differences in the application's behavior.  
-This lab is vulnerable to time-blind technique. I need to delay the lab to overpass.  
+**Blind SQL injection** occurs when an application is vulnerable to SQL injection, but the results of the injected query are not directly displayed in the response. Instead, information must be inferred from differences in the application's behavior.  
+In this lab, the application does not reveal query results or display different responses based on the query outcome. Instead, the vulnerability can be exploited by introducing a time delay and measuring the response time.  
+
+### Time-based blind SQL injection  
+Time-based blind SQL injection is a technique that injected SQL injection payload and observe how long the application responds.  
+If an injected SQL expression causes a delay of 10 seconds, the HTTP response will also be delayed about 10 seconds  
 
 ### [SQL injection cheat sheet](https://portswigger.net/web-security/sql-injection/cheat-sheet)
 Use **String concatenation** and **Time delays** to attack this lab   
