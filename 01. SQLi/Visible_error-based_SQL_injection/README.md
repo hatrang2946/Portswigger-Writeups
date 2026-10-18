@@ -44,7 +44,7 @@ For this attack, we only need to know whether at least one row exists, so return
 
 ## Steps   
 ### 1. Establish a baseline  
-Firstly, I chose the **Pets** category
+Firstly, I chose the **Pets** category  
 In Burp Suite, I intercepted this request and sent it to Repeater  
 ![Request](img/03-request.png)   
 The important parameter in this lab is the `TrackingId` cookie    
