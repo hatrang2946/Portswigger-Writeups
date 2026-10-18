@@ -63,7 +63,7 @@ It is useful in this lab because many similar requests must be sent to test diff
 
 ## Steps  
 ### 1. Establish a baseline  
-Firstly, I chose the **Pets** category
+Firstly, I chose the **Pets** category  
 In Burp Suite, I intercepted this request and sent it to Repeater  
 ![Request](img/03-request.png)   
 The important parameter in this lab is the `trackingId` cookie
