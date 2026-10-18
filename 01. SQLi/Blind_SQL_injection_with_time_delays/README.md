@@ -19,6 +19,10 @@ In this lab, the application does not reveal query results or display different 
 Time-based blind SQL injection is a technique that injected SQL injection payload and observe how long the application responds.  
 If an injected SQL expression causes a delay of 10 seconds, the HTTP response will also be delayed about 10 seconds  
 
+### String concatenation  
+String concatenation combines multiple strings into one.  
+For example: `'abc' || 'def'` produces `abcdef`  
+
 ### [SQL injection cheat sheet](https://portswigger.net/web-security/sql-injection/cheat-sheet)
 Use **String concatenation** and **Time delays** to attack this lab   
 
@@ -30,12 +34,12 @@ In Burp Suite, I intercepted this request and sent it to Repeater
 The important parameter in this lab is the trackingId cookie  
 
 ### 2. Test payload  
-I injected each paylods for time delays and string concatenation to solve the lab  
+I tested payloads using different database-specific time-delay techniques and string concatenation syntax  
 ![Payload 1](img/04-payload1.png)
 ![Payload 2](img/04-payload2.png)
 ![Payload 3](img/04-payload3.png)
 ![Payload 4](img/04-payload4.png)
-The third payload ran with time delay 10,237millis  
+The third payload caused a noticeable delay, with a response time of approximately 10,237 milliseconds.  
 ![Time delay](img/05-time-delay.png)  
-And the lab was solved
+And the lab was solved  
 ![Lab solved](img/06-lab-solved.png)
