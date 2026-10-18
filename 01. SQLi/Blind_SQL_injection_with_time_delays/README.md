@@ -1,6 +1,6 @@
-# Write-up: Blind SQL injection with conditional responses   
+# Write-up: Blind SQL injection with time delays   
 ![Homepage](img/01-homepage.png)  
-Lab-link: https://portswigger.net/web-security/sql-injection/blind/lab-conditional-responses  
+Lab-link: https://portswigger.net/web-security/sql-injection/blind/lab-time-delays  
 Difficulty: Practitioner   
 Status: Solved  
 
@@ -8,4 +8,7 @@ Status: Solved
 ![Lab description](img/02-lab-description.png) 
 
 ## Objectives 
-Retrieve the password of `administrator` user and log into their account  
+Cause the lab delay 10 seconds  
+
+## Background  
+### [!SQL injection](https://portswigger.net/web-security/sql-injection/cheat-sheet)
