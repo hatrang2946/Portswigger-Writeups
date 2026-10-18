@@ -11,4 +11,4 @@ Status: Solved
 Cause the lab delay 10 seconds  
 
 ## Background  
-### ![SQL injection](https://portswigger.net/web-security/sql-injection/cheat-sheet)
+### [SQL injection cheat sheet](https://portswigger.net/web-security/sql-injection/cheat-sheet)
