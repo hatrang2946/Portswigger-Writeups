@@ -8,7 +8,7 @@ Status: Solved
 ![Lab description](img/02-lab-description.png) 
 
 ## Objectives 
-Cause the lab delay 10 seconds  
+Cause the lab to delay 10 seconds  
 
 ## Background  
 ### [SQL injection cheat sheet](https://portswigger.net/web-security/sql-injection/cheat-sheet)
