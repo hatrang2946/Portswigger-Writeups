@@ -8,7 +8,7 @@ Status: Solved
 ![Lab description](img/02-lab-description.png) 
 
 ## Objectives 
-Cause the lab to delay 10 seconds  
+Retrieve the password of `administrator` user and log into their account    
 
 ## Background  
 ### Blind SQL injection  
