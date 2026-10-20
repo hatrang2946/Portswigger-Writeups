@@ -1,6 +1,6 @@
 # Write-up: Blind SQL injection with time delays and information retrieval
 ![Homepage](img/01-homepage.png)  
-Lab-link: https://portswigger.net/web-security/sql-injection/blind/lab-time-delays  
+Lab-link: https://portswigger.net/web-security/sql-injection/blind/lab-time-delays-info-retrieval  
 Difficulty: Practitioner   
 Status: Solved  
 
