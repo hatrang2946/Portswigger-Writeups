@@ -29,6 +29,17 @@ For example: `'abc' || 'def'` produces `abcdef`
 CASE WHEN condition THEN value1 ELSE value2 END
 ```
 
+### `LENGTH()`  
+`LENGTH()` returns the number of characters in a string.  
+
+### `SUBSTRING()`  
+`SUBSTRING()` extracts a specific part of a string using the following syntax:  
+SUBSTRING(string, start, length)    
+For example: `SUBSTRING(password,1,1)`  
+`password`: the string to extract characters from.  
+`1` (second parameter): the starting position of the character to extract. Positions start from 1.  
+`1` (third parameter): the number of characters to extract.   
+
 ### [SQL injection cheat sheet](https://portswigger.net/web-security/sql-injection/cheat-sheet)
 Use **String concatenation** and **Time delays** to attack this lab   
 
