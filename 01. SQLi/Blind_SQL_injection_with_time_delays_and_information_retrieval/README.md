@@ -41,7 +41,7 @@ For example: `SUBSTRING(password,1,1)`
 `1` (third parameter): the number of characters to extract.   
 
 ### [SQL injection cheat sheet](https://portswigger.net/web-security/sql-injection/cheat-sheet)
-Use **String concatenation** and **Time delays** to attack this lab   
+Use it to get the payload for each database management system   
 
 ## Steps  
 ### 1. Establish a baseline  
