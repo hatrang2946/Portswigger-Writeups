@@ -109,8 +109,7 @@ Step `1`
 ![Payload for number in Burp Intruder](img/11-number.png) 
 For the second payload position, I used Brute forcer to test possible characters.  
 ![Payload for character in Burp Intruder](img/12-character.png)  
-In Settings -> **Grep Match**, I added `Welcome back!`   
-After starting the attack, I recorded the character that produced **Welcome back!** for each password position.  
+After starting the attack, I recorded the character that caused 10-seconds delay for each password position.  
 ![Intruder attack for password](img/13-password.png)  
 The administrator password was: `il2mtulhg7q5dub2kqc4`  
 And the lab was solved:  
