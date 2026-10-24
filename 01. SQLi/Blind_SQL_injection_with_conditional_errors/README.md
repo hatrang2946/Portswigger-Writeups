@@ -31,7 +31,7 @@ For example: `SUBSTR(password,1,1)`
 #### String concatenation on Oracle  
 Oracle uses `||` to concatenate strings  
 **For example:**
-'abc' || 'def' produces: 'abcdef'
+`'abc' || 'def'` produces: `'abcdef'`
 #### Using `CASE`
 `CASE` can execute different expressions depending on whether a condition is true or false. The general structure is:
 ```text
