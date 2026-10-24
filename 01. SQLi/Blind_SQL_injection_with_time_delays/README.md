@@ -39,7 +39,7 @@ I tested payloads using different database-specific time-delay techniques and st
 ![Payload 2](img/05-payload2.png)  
 ![Payload 3](img/06-payload3.png)  
 ![Payload 4](img/07-payload4.png)  
-The third payload caused a noticeable delay, with a response time of approximately 10,237 milliseconds.  
+The third payload caused a noticeable delay, with a response time of 10,237 milliseconds.  
 ![Time delay](img/08-time-delay.png)    
 And the lab was solved  
 ![Lab solved](img/09-lab-solved.png)  
