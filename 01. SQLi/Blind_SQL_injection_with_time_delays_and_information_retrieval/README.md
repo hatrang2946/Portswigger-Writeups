@@ -79,5 +79,18 @@ The response slept 10 seconds
 This time, it did not sleep at all  
 Therefore, `1<the password length<=30`
 
+Now, I sent the request to Intruder  
+In the tab Burp Intruder, I selected the number used in `LENGTH(password)>§1§` as the payload position and clicked **Add §**  
+I chose **Sniper attack** because there was only 1 payload position  
+For the payload configuration:  
+Payload type: `Numbers`  
+From `1`  
+To `30`  
+Step `1`  
+![Payload in Burp Intruder](img/09-payload.png)   
+After starting attack, the response showed that the response got `response received>10000` for values from `1` to `19`, while the `response received` for `20` was just   
+This means: `LENGTH(password)=20`  
+![Intruder attack: the length of password](img/10-intruder.png)  
+
 And the lab was solved  
 ![Lab solved](img/09-lab-solved.png)  
