@@ -92,5 +92,26 @@ After starting attack, the response showed that the response got `response recei
 This means: `LENGTH(password)=20`  
 ![Intruder attack: the length of password](img/10-intruder.png)  
 
-And the lab was solved  
-![Lab solved](img/09-lab-solved.png)  
+### 5. Retrieve the administrator password  
+I used the following payload to test the first character of the password:     
+```text
+' AND (SELECT SUBSTRING(password,1,1) from users WHERE username='administrator')='a'--
+```
+I marked the character position and the character as two payload positions: `SUBSTRING(password,§1§,1)='§a§'`  
+I used **Cluster bomb attack** because there are two independent values to test:  
+The first position represents the character position in the password.  
+The second position represents the character being tested.  
+For the first payload position, I used:  
+Payload type: `Numbers`  
+From `1`  
+To `20`  
+Step `1`  
+![Payload for number in Burp Intruder](img/11-number.png) 
+For the second payload position, I used Brute forcer to test possible characters.  
+![Payload for character in Burp Intruder](img/12-character.png)  
+In Settings -> **Grep Match**, I added `Welcome back!`   
+After starting the attack, I recorded the character that produced **Welcome back!** for each password position.  
+![Intruder attack for password](img/13-password.png)  
+The administrator password was: `il2mtulhg7q5dub2kqc4`  
+And the lab was solved:  
+![Lab solved](img/14-lab-solved.png)  
