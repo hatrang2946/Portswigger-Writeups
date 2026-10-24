@@ -45,7 +45,7 @@ Use **String concatenation** and **Time delays** to attack this lab
 
 ## Steps  
 ### 1. Establish a baseline  
-Firstly, I chose **Gifts** category
+Firstly, I chose **Gifts** category  
 In Burp Suite, I intercepted this request and sent it to Repeater
 ![Request](img/03-request.png)
 The important parameter in this lab is the `TrackingId` cookie  
