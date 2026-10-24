@@ -23,6 +23,12 @@ If an injected SQL expression causes a delay of 10 seconds, the HTTP response wi
 String concatenation combines multiple strings into one.  
 For example: `'abc' || 'def'` produces `abcdef`  
 
+### Using `CASE`
+`CASE` can execute different expressions depending on whether a condition is true or false. The general structure is:
+```text
+CASE WHEN condition THEN value1 ELSE value2 END
+```
+
 ### [SQL injection cheat sheet](https://portswigger.net/web-security/sql-injection/cheat-sheet)
 Use **String concatenation** and **Time delays** to attack this lab   
 
