@@ -1,6 +1,6 @@
-# Write-up: Blind SQL injection with time delays   
+# Write-up: Blind SQL injection with out-of-band interaction   
 ![Homepage](img/01-homepage.png)  
-Lab-link: https://portswigger.net/web-security/sql-injection/blind/lab-time-delays  
+Lab-link: https://portswigger.net/web-security/sql-injection/blind/lab-out-of-band  
 Difficulty: Practitioner   
 Status: Solved  
 
