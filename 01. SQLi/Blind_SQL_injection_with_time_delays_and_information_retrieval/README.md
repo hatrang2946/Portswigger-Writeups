@@ -65,7 +65,7 @@ I injected:
 ```text
 '||(SELECT CASE WHEN(username='administrator') THEN pg_sleep(10) ELSE pg_sleep(0) END FROM users)--
 ```
-The response slept 10 seconds, so `users` table and `administrator` user exist    
+The response was delayed about 10 seconds, so `users` table and `administrator` user exist    
 
 ### 4. Identify the password length  
 I injected 2 payloads: 
@@ -88,7 +88,7 @@ From `1`
 To `30`  
 Step `1`  
 ![Payload in Burp Intruder](img/09-payload.png)   
-After starting attack, the response showed that the response got `response received>10000` for values from `1` to `19`, while the `response received` for `20` was just   
+After starting attack, the response showed that the response got `response received>10000` for values from `1` to `19`, while the `response received` for `20` was just about 200 miliseconds
 This means: `LENGTH(password)=20`  
 ![Intruder attack: the length of password](img/10-intruder.png)  
 
