@@ -16,7 +16,7 @@ Cause the lab to delay 10 seconds
 In this lab, the application does not reveal query results or display different responses based on the query outcome. Instead, the vulnerability can be exploited by introducing a time delay and measuring the response time.  
 
 ### Time-based blind SQL injection  
-Time-based blind SQL injection is a technique that injected SQL injection payload and observe how long the application responds.  
+Time-based blind SQL injection is a technique that inject SQL injection payload and observe how long the application responds.  
 If an injected SQL expression causes a delay of 10 seconds, the HTTP response will also be delayed about 10 seconds  
 
 ### String concatenation  
