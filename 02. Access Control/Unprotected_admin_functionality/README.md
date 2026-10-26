@@ -1,4 +1,4 @@
-# Write up: Unprotected admin functionality  
+# Write-up: Unprotected admin functionality  
 ![Homepage](img/01-homepage.png)  
 Lab-link: https://portswigger.net/web-security/access-control/lab-unprotected-admin-functionality  
 Difficulty: Apprentice  
