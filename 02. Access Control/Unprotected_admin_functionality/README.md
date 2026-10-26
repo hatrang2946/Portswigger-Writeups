@@ -20,7 +20,7 @@ I added `/robots.txt` into the URL and `Disallow` appeared
 ![/Robots.txt](img/03-robots.png)
 
 ### 2. 
-Now, I replaced `/robots.txt` with the value of `Disallow`  
+Now, I replaced `/robots.txt` with the value of `Disallow`: `/administrator-panel`  
 I got administration, and I choose deleting user `Carlos`
 ![Users](img/04-users.png)  
 
