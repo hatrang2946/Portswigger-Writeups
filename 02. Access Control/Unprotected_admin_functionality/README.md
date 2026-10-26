@@ -27,5 +27,5 @@ The panel was accessible without requiring administrator authentication.
 ### 3. Delete `Carlos` user  
 I clicked `Delete` option next to the user `Carlos`.
 
-And the lab was solved  
+And the lab was solved.  
 ![Lab solved](img/05-lab-solved.png)
