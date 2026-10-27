@@ -12,7 +12,9 @@ Delete the user `carlos`
 
 ## Background  
 ### `robots.txt`
-robots.txt is a file that provides instructions to search engine crawlers about which URLs they should avoid crawling. However, it does not restrict access to those URLs.
+robots.txt is a file that provides instructions to search engine crawlers about which URLs they should avoid crawling. However, it does not restrict access to those URLs.  
+### Unprotected admin functionality
+Unprotected admin functionality occurs when an application fails to enforce proper access control on administrative features. If the admin panel can be accessed without authentication or authorization checks, an attacker may perform administrative actions by navigating directly to its URL.  
 
 ## Steps  
 ### 1. Discover the admin panel path  
