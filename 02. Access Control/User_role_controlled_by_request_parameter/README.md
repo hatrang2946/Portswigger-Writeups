@@ -10,22 +10,29 @@ Status: Solved
 ## Objectives  
 Delete the user `carlos`  
 
-## Backgrounds
-### Inspector  
+## Backgrounds  
+### Broken Access Control  
+Broken Access Control occurs when an application fails to enforce proper restrictions on what authenticated users are allowed to do.  
+
+### Cookies  
+Cookies are values stored by the browser and sent to the server with subsequent HTTP requests.  
+Cookies controlled by the client should not be trusted as the sole basis for granting privileges.    
 
 ## Steps  
 ### 1. Log into `wiener` account  
-I filled in with the information provided by the lab:
+I logged in with the information provided by the lab:
 Username: `wiener`  
-Password: `peter`
+Password: `peter`  
+The account was a normal user
 
 ### 2. Access the admin panel  
-I intercepted this requet:
+I intercepted this requet in Burp Suite and inspected the HTTP response.  
 ![Request](img/03-request)
-The response showed that `Set-Cookie: Admin=false`
+The response contained the following header: `Set-Cookie: Admin=false`  
 ![Response](img/04-response)
-I turned on `Inspect` page of the web and change Admin's cookies to `True`
-![Cookies](img/05-cookies)
+I opened the browser's Developer Tools and navigated to the Application panel to inspect the stored cookies.  
+I changed the value of the `Admin` cookie from `false` to `true`.  
+![Cookies](img/05-cookies)  
 Then, I reloaded the page and I can access admin panel without requiring administrator authentication.  
 ![Users](img/06-users.png)  
 
