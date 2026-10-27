@@ -28,7 +28,7 @@ I intercepted HTTP requet and sent it to Repeater in Burp Suite.
 
 ### 2. Obtain `id` of `carlos` user  
 I returned Home and clicked each post to get carlos's post  
-![Carlos's post](img/04-post)  
+![Carlos's post](img/04-post.png)  
 I clicked `carlos`.
 In Burp Suite, I got the id of `carlos` user  
 ![Request of Carlos](img/05-request2.png)  
