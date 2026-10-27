@@ -23,18 +23,18 @@ The account was a normal user
 
 ### 2. Access the admin panel  
 I entered `test@123.com` in the email field and clicked `Update email`  
-in Burp Suite, I intercepted this request and inspected the HTTP response.  
-![Request](img/03-request.png)
+In Burp Suite, I intercepted this request and inspected the HTTP response.  
+![Request](img/03-request.png)    
 The response revealed that account's roleid was 1: `"roleid": 1`  
 ![Response](img/04-response.png)  
 To get the administration, the account's roleid should be 2.  
 In the request body, I injected `,` after the email and `"roleid": 2`  
-![Request Change](img/05-request2.png)
+![Request Change](img/05-request2.png)  
 I sent the request and inspected the response. The value of `roleid` has changed from `1` to `2`  
-![Response Change](img/06-response2.png)  
+![Response Change](img/06-response2.png)    
 
 Then, I reloaded the page and I can access admin panel without requiring administrator authentication.  
-![Users](img/07-users.png)  
+![Users](img/07-users.png)    
 
 ### 3. Delete `Carlos` user  
 I clicked `Delete` option next to the user `Carlos`.
