@@ -10,7 +10,7 @@ Status: Solved
 ## Objectives  
 Delete the user `carlos`  
 
-## Backgrounds  
+## Background  
 ### Unprotected admin functionality    
 Unprotected admin functionality occurs when an application fails to enforce proper access control on administrative features. If the admin panel can be accessed without authentication or authorization checks, an attacker may perform administrative actions by navigating directly to its URL.
 
