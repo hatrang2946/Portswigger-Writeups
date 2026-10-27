@@ -13,17 +13,18 @@ Delete the user `carlos`
 ## Steps  
 ### 1. Discover the admin panel path  
 After accessing the lab, I intercepted this request and sent it to Repeater in Burp Suite    
+![Request](img/03-request.png)
 The admin panel path was revealed in the response: `/admin-dv52x9`     
-![Response](img/03-response.png)
+![Response](img/04-response.png)
 
 ### 2. Access the admin panel  
 Now, I added the lab URL with `/admin-dv52x9` to access the admin panel.  
-![Users](img/04-users.png)  
+![Users](img/05-users.png)  
 The panel was accessible without requiring administrator authentication.  
 
 ### 3. Delete `Carlos` user  
 I clicked `Delete` option next to the user `Carlos`.
 
 And the lab was solved.  
-![Lab solved](img/05-lab-solved.png)
+![Lab solved](img/06-lab-solved.png)
 
