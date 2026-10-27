@@ -10,7 +10,7 @@ Status: Solved
 ## Objectives  
 Obtain the API key for the user `carlos` 
 
-## Backgrounds  
+## Background  
 ### Broken Access Control  
 Broken Access Control occurs when an application fails to enforce proper restrictions on what authenticated users are allowed to do.  
 ### IDOR (Insecure Direct Object Reference)
