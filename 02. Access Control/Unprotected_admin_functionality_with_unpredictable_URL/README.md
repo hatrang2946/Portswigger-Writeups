@@ -12,11 +12,12 @@ Delete the user `carlos`
 
 ## Steps  
 ### 1. Discover the admin panel path  
-I added `/robots.txt` into the lab URL and found a `Disallow` directive that revealed the admin panel path     
-![/Robots.txt](img/03-robots.png)
+After accessing the lab, I intercepted this request and sent it to Repeater in Burp Suite    
+The response showed the admin panel path     
+![/Response.txt](img/03-response.png)
 
 ### 2. Access the admin panel  
-Now, I replaced `/robots.txt` with `/administrator-panel` to access the admin panel.  
+Now, I added the lab URL with `/admin-dv52x9` to access the admin panel.  
 ![Users](img/04-users.png)  
 The panel was accessible without requiring administrator authentication.  
 
