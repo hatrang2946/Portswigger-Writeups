@@ -1,2 +1,2 @@
 # Portswigger-Writeups
-How to solve lab in Portswigger
+How to solve labs in Portswigger
