@@ -20,7 +20,7 @@ Cookies controlled by the client should not be trusted as the sole basis for gra
 
 ## Steps  
 ### 1. Log into `wiener` account  
-I logged in with the information provided by the lab:
+I logged in with the information provided by the lab:  
 Username: `wiener`  
 Password: `peter`  
 The account was a normal user
