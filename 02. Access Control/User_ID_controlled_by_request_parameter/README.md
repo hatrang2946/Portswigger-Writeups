@@ -21,20 +21,15 @@ Username: `wiener`
 Password: `peter`  
 The account was a normal user
 
-### 2. Access the admin panel  
-I intercepted this requet in Burp Suite and inspected the HTTP response.  
-![Request](img/03-request.png)
-The response contained the following header: `Set-Cookie: Admin=false`  
+### 2. Get API Key of `carlos` user  
+I intercepted this requet in Burp Suite.  
+![Request](img/03-request.png)  
+I changed the `id` value of the request from `wiener` to `carlos`  
+I sent the request and inspected the response.   
+In the response, API Key of `carlos` user was revealed: `q6Ldh0PNKGFxHK15AsYZPyy3QUtSAxcX`
 ![Response](img/04-response.png)
-I opened the browser's Developer Tools and navigated to the Application panel to inspect the stored cookies.  
-I changed the value of the `Admin` cookie from `false` to `true`.  
-![Cookies](img/05-cookies.png)  
-Then, I reloaded the page and I can access admin panel without requiring administrator authentication.  
-![Users](img/06-users.png)  
-
-### 3. Delete `Carlos` user  
-I clicked `Delete` option next to the user `Carlos`.
+I returned the web page and submitted API Key 
 
 And the lab was solved.  
-![Lab solved](img/07-lab-solved.png)
+![Lab solved](img/05-lab-solved.png)
 
