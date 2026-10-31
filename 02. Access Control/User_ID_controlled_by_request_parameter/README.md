@@ -25,7 +25,7 @@ Password: `peter`
 The account was a normal user
 
 ### 2. Obtain API Key of `carlos` user  
-I intercepted HTTP requet in Burp Suite.  
+I intercepted HTTP request in Burp Suite.  
 ![Request](img/03-request.png)  
 I changed the `id` parameter from `wiener` to `carlos`  
 I sent the request and inspected the response.   
