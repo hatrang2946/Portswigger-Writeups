@@ -1,4 +1,4 @@
-<img width="2304" height="360" alt="image" src="https://github.com/user-attachments/assets/4c3fd4e1-2fcd-42c1-b678-9750a10f05fe" /># Write-up: User ID controlled by request parameter with password disclosure  
+# Write-up: User ID controlled by request parameter with password disclosure  
 ![Homepage](img/01-homepage.png)  
 Lab-link: https://portswigger.net/web-security/access-control/lab-user-id-controlled-by-request-parameter-with-password-disclosure  
 Difficulty: Apprentice  
