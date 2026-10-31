@@ -38,7 +38,7 @@ I accessed the admin panel and clicked `Delete` option next to the user `carlos`
 ![Users](img/05-users.png)   
 
 And the lab was solved.  
-![Lab solved](img/07-lab-solved.png)
+![Lab solved](img/06-lab-solved.png)
 
 
 
