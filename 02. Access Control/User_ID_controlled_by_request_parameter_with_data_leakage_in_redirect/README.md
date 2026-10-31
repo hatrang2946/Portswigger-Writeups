@@ -1,4 +1,4 @@
-# Write-up: User ID controlled by request parameter, with data leakage in redirect  
+# Write-up: User ID controlled by request parameter with data leakage in redirect  
 ![Homepage](img/01-homepage.png)  
 Lab-link: https://portswigger.net/web-security/access-control/lab-user-id-controlled-by-request-parameter-with-data-leakage-in-redirect  
 Difficulty: Apprentice  
