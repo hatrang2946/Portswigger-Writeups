@@ -1,4 +1,4 @@
-# Write-up: User ID controlled by request parameter with password disclosure  
+<img width="2304" height="360" alt="image" src="https://github.com/user-attachments/assets/4c3fd4e1-2fcd-42c1-b678-9750a10f05fe" /># Write-up: User ID controlled by request parameter with password disclosure  
 ![Homepage](img/01-homepage.png)  
 Lab-link: https://portswigger.net/web-security/access-control/lab-user-id-controlled-by-request-parameter-with-password-disclosure  
 Difficulty: Apprentice  
@@ -23,21 +23,19 @@ I logged in with the information provided by the lab:
 Username: `wiener`  
 Password: `peter`  
 The account was a normal user  
-I intercepted HTTP request and sent it to Repeater in Burp Suite.  
-![Request of Wiener](img/03-request1.png)  
 
-### 2. Obtain `id` of `carlos` user  
-I returned to the home page and browsed the posts until I found a post authored by `carlos`  
-![Carlos's post](img/04-post.png)  
-I clicked the author's name and inspected the resulting HTTP request in Burp Suite to identify the UUID associated with `carlos`.    
-![Request of Carlos](img/05-request2.png)  
+### 2. Retrieve the password of `administrator`  
+I intercepted HTTP request in Burp Suite.  
+![Request](img/03-request.png)  
+I changed the `id` parameter from `wiener` to `administrator`  
+I sent the request and inspected the response.   
+In the response, the password of `administrator` was revealed: `lyrv4apn82g9v8wr7jen`  
+![Response](img/04-response.png)  
 
-### 3. Obtain API Key of `carlos` user  
-I changed the `id` parameter from `565e0942-0a22-4982-9bab-2b85b6612246` to `e1b1f68f-3fae-45c5-90a4-b5bd16d36ea0` (`wiener` to `carlos`)    
-I sent the modified request and inspected the response.   
-In the response, API Key of `carlos` user was revealed: `kXtd78B9kVeVHA6xwBmX4WuNyTzwqfqj`
-![Response](img/06-response.png)  
-I returned to the lab page and submitted the retrieved API Key 
+### 3. Delete `carlos` user   
+I returned to the lab page and sign in as administrator    
+I accessed the admin panel and clicked `Delete` option next to the user `carlos`  
+![Users](img/05-users.png)   
 
 And the lab was solved.  
 ![Lab solved](img/07-lab-solved.png)
