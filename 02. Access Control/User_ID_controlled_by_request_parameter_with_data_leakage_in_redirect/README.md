@@ -31,7 +31,7 @@ I changed the `id` parameter from `wiener` to `carlos`
 I sent the request and inspected the response.   
 In the response, API Key of `carlos` user was revealed: `mIYoIQJp1GNAnwfaOXuaRcF1oJqVSrT7`
 ![Response](img/04-response.png)  
-I returned to the lab page and submitted the retrieved API Key 
+I returned to the lab page and submitted the retrieved API Key  
 
 And the lab was solved.  
 ![Lab solved](img/05-lab-solved.png)
