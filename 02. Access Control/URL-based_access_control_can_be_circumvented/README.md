@@ -19,12 +19,8 @@ An attacker may exploit this vulnerability by changing an identifier in a reques
 
 ## Steps  
 ### 1.   
-On the lab page, I chose `Live chat`  
-I added something into the box of `Your message:` and clicked `Send`  
-I chose `View transcript` and 1 file named `2.txt` had been downloaded  
-Username: `wiener`  
-Password: `peter`  
-The account was a normal user
+In the lab's URL, I added `/admin`
+I could not access because the request had been denied  
 
 ### 2. Obtain API Key of `carlos` user  
 I intercepted HTTP request in Burp Suite.  
