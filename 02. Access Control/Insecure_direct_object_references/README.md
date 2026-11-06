@@ -4,7 +4,7 @@ Lab-link: https://portswigger.net/web-security/access-control/lab-insecure-direc
 Difficulty: Apprentice  
 Status: Solved  
 
-## Lab description:   
+## Lab description   
 ![Lab description](img/02-lab-description.png)  
 
 ## Objectives  
@@ -18,8 +18,10 @@ IDOR occurs when an application uses a user-controlled identifier to access an o
 An attacker may exploit this vulnerability by changing an identifier in a request to access another user's data.  
 
 ## Steps  
-### 1. Log into `wiener` account  
-I logged in with the information provided by the lab:  
+### 1.   
+On the lab page, I chose `Live chat`  
+I added something into the box of `Your message:` and clicked `Send`  
+I chose `View transcript` and 1 file named `2.txt` had been downloaded  
 Username: `wiener`  
 Password: `peter`  
 The account was a normal user
