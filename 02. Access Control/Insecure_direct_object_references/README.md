@@ -27,7 +27,7 @@ I chose `View transcript` and 1 file named `2.txt` had been downloaded
 
 ### 2. Obtain password of `carlos` user  
 In Burp Suite, I intercepted this request and sent it to Burp Repeater  
-![Request](img/03.request.png)  
+![Request](img/03-request.png)  
 The response firstly showed the conversation between me and Hal Pline  
 In the URL of the request, I changed `2.txt` with `1.txt`  
 I sent the request and inspected the response  
