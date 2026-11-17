@@ -17,7 +17,7 @@ Broken Access Control occurs when an application fails to enforce proper restric
 IDOR occurs when an application uses a user-controlled identifier to access an object but fails to verify whether the current user is authorized to access that object.  
 An attacker may exploit this vulnerability by changing an identifier in a request to access another user's data.  
 ### Privilege escalation  
-**Vertical privilege escalation:** A lower-privileged user accesses functions reserved for higher-privileged accounts (such as an administrator)
+**Vertical privilege escalation:** A lower-privileged user accesses functions reserved for higher-privileged accounts (such as an administrator)  
 **Horizontal privilege escalation:** A user accesses resources or data belonging to another user with the same privilege level.  
 In this lab, it belongs to **vertical privilege escalation**
 ### Method-based access control  
