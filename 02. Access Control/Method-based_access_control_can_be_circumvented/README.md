@@ -16,8 +16,10 @@ Broken Access Control occurs when an application fails to enforce proper restric
 ### IDOR (Insecure Direct Object Reference)
 IDOR occurs when an application uses a user-controlled identifier to access an object but fails to verify whether the current user is authorized to access that object.  
 An attacker may exploit this vulnerability by changing an identifier in a request to access another user's data.  
-### Method-based access control  
+### Privilege escalation  
 
+### Method-based access control  
+Method-based access control is a security mechanism that restricts access to specific endpoints based on the HTTP request method    
 ### Cookies  
 
 ### `GET` and `POST` methods
@@ -33,18 +35,18 @@ Then, I returned **administrator** account and downgrade **wiener** user and upg
 In Burp Suite, I intercepted this POST request and sent it to Burp Repeater  
 ![Request](img/03-request.png)
 #### Reason why this lab was not solved  
-
+Upgrading `wiener` directly from the `administrator` account is just normal administrative functionality, not an exploit. To solve the lab, the privilege escalation request must be triggered from an unprivileged session (`wiener`) by bypassing the server's access control.
 
 ### 2. Privilege escalation using method-based access control  
 In Burp Suite, I came to sign-in request of **wiener** user  
 I copied cookie session of **wiener** user   
 ![Wiener's cookie session](img/04-request2.png)
-In the POST request, I changed the value of session with cookie session of **wiener** user  
-Then, I right clicked on the request and chose `change method request` from `POST` to `GET`  
-
-
-
+In the POST request, I changed the value of administrator's session cookie with cookie session of **wiener** user and the `username` parameter in the request body from `carlos` to `wiener`    
+After sending the modified request, the response returned `401 Unauthorized`  
+This meant the server properly checked permissions on `POST` requests
+Then, I right-clicked on the request and chose `change method request` to switch it from `POST` to `GET`  
+I sent the modified request.  
 I returned to the lab page and the lab was solved    
-![Lab solved](img/07-lab-solved.png)
+![Lab solved](img/05-lab-solved.png)
 
 
