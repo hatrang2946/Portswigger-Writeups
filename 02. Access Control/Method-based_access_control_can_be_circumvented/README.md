@@ -1,6 +1,6 @@
-# Write-up: URL-based access control can be circumvented  
+# Write-up: Method-based access control can be circumvented  
 ![Homepage](img/01-homepage.png)  
-Lab-link: https://portswigger.net/web-security/access-control/lab-url-based-access-control-can-be-circumvented    
+Lab-link: https://portswigger.net/web-security/access-control/lab-method-based-access-control-can-be-circumvented    
 Difficulty: Practitioner  
 Status: Solved  
 
@@ -8,7 +8,7 @@ Status: Solved
 ![Lab description](img/02-lab-description.png)  
 
 ## Objectives  
-Delete the user `carlos`  
+Log in `wiener` account and promote to become administrator  
 
 ## Background  
 ### Broken Access Control  
