@@ -31,24 +31,24 @@ Cookies are small pieces of data stored by the browser and sent back to the serv
 
 ## Steps  
 ### 1. Establish a baseline  
-Firstly, I signed in with **administrator** account:
+Firstly, I signed in with **administrator** account:  
 `Username: administrator`  
 `Password: admin`  
-I accessed **Admin panel** and chose user `wiener(NORMAL)` to upgrade user
+I accessed **Admin panel** and chose user `wiener(NORMAL)` to upgrade user  
 When I signed in with **wiener** account, the lab was not solved  
 Then, I returned **administrator** account and downgrade **wiener** user and upgrade **carlos** user  
 In Burp Suite, I intercepted this POST request and sent it to Burp Repeater  
-![Request](img/03-request.png)
+![Request](img/03-request.png)  
 #### Reason why this lab was not solved  
 Upgrading `wiener` directly from the `administrator` account is just normal administrative functionality, not an exploit. To solve the lab, the privilege escalation request must be triggered from an unprivileged session (`wiener`) by bypassing the server's access control.
 
 ### 2. Privilege escalation using method-based access control  
 In Burp Suite, I came to sign-in request of **wiener** user  
 I copied cookie session of **wiener** user   
-![Wiener's cookie session](img/04-request2.png)
+![Wiener's cookie session](img/04-request2.png)  
 In the POST request, I changed the value of administrator's session cookie with cookie session of **wiener** user and the `username` parameter in the request body from `carlos` to `wiener`    
 After sending the modified request, the response returned `401 Unauthorized`  
-This meant the server properly checked permissions on `POST` requests
+This meant the server properly checked permissions on `POST` requests  
 Then, I right-clicked on the request and chose `change method request` to switch it from `POST` to `GET`  
 ![GET request](img/05-request3.png)
 I sent the modified request.  
