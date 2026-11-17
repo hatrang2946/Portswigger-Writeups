@@ -17,12 +17,16 @@ Broken Access Control occurs when an application fails to enforce proper restric
 IDOR occurs when an application uses a user-controlled identifier to access an object but fails to verify whether the current user is authorized to access that object.  
 An attacker may exploit this vulnerability by changing an identifier in a request to access another user's data.  
 ### Privilege escalation  
-
+**Vertical privilege escalation:** A lower-privileged user (such as a standard user) accesses functions reserved for higher-privileged accounts (such as an administrator)—which is the case in this lab.  
+**Horizontal privilege escalation:** A user accesses resources or data belonging to another user with the same privilege level.  
 ### Method-based access control  
 Method-based access control is a security mechanism that restricts access to specific endpoints based on the HTTP request method    
 ### Cookies  
-
+Cookies are small pieces of data stored by the browser and sent back to the server with every HTTP request. In web applications, session cookies are commonly used to maintain user state and identify who is making the request after authentication.  
 ### `GET` and `POST` methods
+`GET` and `POST` are two of the most common HTTP request methods:  
+`GET` is intended to retrieve data from the server, with parameters typically passed in the URL query string.  
+`POST` is designed to submit data or trigger state-changing actions, sending parameters within the request body.  
 
 ## Steps  
 ### 1. Establish a baseline  
