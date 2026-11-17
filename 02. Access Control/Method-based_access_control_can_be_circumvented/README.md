@@ -18,6 +18,9 @@ IDOR occurs when an application uses a user-controlled identifier to access an o
 An attacker may exploit this vulnerability by changing an identifier in a request to access another user's data.  
 ### Method-based access control  
 
+### Cookies  
+
+### `GET` and `POST` methods
 
 ## Steps  
 ### 1. Establish a baseline  
@@ -30,7 +33,7 @@ Then, I returned **administrator** account and downgrade **wiener** user and upg
 In Burp Suite, I intercepted this request and sent it to Burp Repeater  
 ![Request](img/03-request.png)
 
-### 2. Bypass URL-based control using `X-Original-Url` header  
+### 2. Bypass method  
 I changed the request path from `/admin` to `/` and I add header: `X-Original-Url /hi` after link of `Referer` parameter  
 ![Request with X-Original-Url header](img/04-request2.png)
 After sending the modified request, I got `404 Not Found` status  
