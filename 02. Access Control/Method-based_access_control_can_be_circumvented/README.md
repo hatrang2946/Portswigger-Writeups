@@ -16,12 +16,8 @@ Broken Access Control occurs when an application fails to enforce proper restric
 ### IDOR (Insecure Direct Object Reference)
 IDOR occurs when an application uses a user-controlled identifier to access an object but fails to verify whether the current user is authorized to access that object.  
 An attacker may exploit this vulnerability by changing an identifier in a request to access another user's data.  
-### URL-based access control  
-Some applications implement access control based on the requested URL. For example, just users with administration can access `/admin`    
-If the application does not consistently enforce access control on the URL actually processed, an attacker may bypass these restrictions.
-### `X-Original-Url` header  
-`X-Original-Url` is an HTTP header sometimes used by proxies or web applications to pass the original request URL.  
-If an application trusts this header without properly validating it and enforcing access control, an attacker may manipulate its value to access restricted endpoints.
+### Method-based access control  
+
 
 ## Steps  
 ### 1. Establish a baseline  
