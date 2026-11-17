@@ -45,8 +45,9 @@ In the POST request, I changed the value of administrator's session cookie with 
 After sending the modified request, the response returned `401 Unauthorized`  
 This meant the server properly checked permissions on `POST` requests
 Then, I right-clicked on the request and chose `change method request` to switch it from `POST` to `GET`  
+![GET request](img/05-request3.png)
 I sent the modified request.  
 I returned to the lab page and the lab was solved    
-![Lab solved](img/05-lab-solved.png)
+![Lab solved](img/06-lab-solved.png)
 
 
