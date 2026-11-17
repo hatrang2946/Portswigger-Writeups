@@ -17,7 +17,7 @@ Broken Access Control occurs when an application fails to enforce proper restric
 IDOR occurs when an application uses a user-controlled identifier to access an object but fails to verify whether the current user is authorized to access that object.  
 An attacker may exploit this vulnerability by changing an identifier in a request to access another user's data.  
 ### URL-based access control  
-Some applications implement access control based on the requested URL. For example, just users with administration can access /admin
+Some applications implement access control based on the requested URL. For example, just users with administration can access `/admin`    
 If the application does not consistently enforce access control on the URL actually processed, an attacker may bypass these restrictions.
 ### `X-Original-Url` header  
 `X-Original-Url` is an HTTP header sometimes used by proxies or web applications to pass the original request URL.  
@@ -43,7 +43,7 @@ The response revealed a link to the user deletion endpoint.
 I replaced the value of `X-Original-Url` from `/admin` to `/admin/delete` and added `?username=carlos` to the request URL  
 ![Request to delete user](img/06-request3.png)  
 #### Why add `/admin/delete` and `and ?username=carlos`   
-`/admin/delete`: The endpoint responsible for deleting a user account.
+`/admin/delete`: The endpoint responsible for deleting a user account.  
 `username=carlos`: The query parameter specifying which account should be deleted.
 
 I returned to the lab page and the lab was solved    
