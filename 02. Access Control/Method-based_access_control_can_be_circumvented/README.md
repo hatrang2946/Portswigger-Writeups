@@ -21,8 +21,13 @@ An attacker may exploit this vulnerability by changing an identifier in a reques
 
 ## Steps  
 ### 1. Establish a baseline  
-In the lab's URL, I clicked `Admin panel` to access admin page, but my request was denied  
-In Burp Suite, I intercepted this request and sent it to Burp Repeater for further testing  
+Firstly, I signed in with **administrator** account:
+`Username: administrator`  
+`Password: admin`  
+I accessed **Admin panel** and chose user `wiener(NORMAL)` to upgrade user
+When I signed in with **wiener** account, the lab was not solved  
+Then, I returned **administrator** account and downgrade **wiener** user and upgrade **carlos** user  
+In Burp Suite, I intercepted this request and sent it to Burp Repeater  
 ![Request](img/03-request.png)
 
 ### 2. Bypass URL-based control using `X-Original-Url` header  
