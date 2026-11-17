@@ -25,7 +25,7 @@ If an application trusts this header without properly validating it and enforcin
 
 ## Steps  
 ### 1. Establish a baseline  
-In the lab's URL, I clicked `Admin panel` to access admin page, but my request was denied  
+In the lab page, I clicked `Admin panel` to access admin page, but my request was denied  
 In Burp Suite, I intercepted this request and sent it to Burp Repeater for further testing  
 ![Request](img/03-request.png)
 
