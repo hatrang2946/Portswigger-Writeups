@@ -19,15 +19,9 @@ An attacker may exploit this vulnerability by changing an identifier in a reques
 ### Privilege escalation  
 **Vertical privilege escalation:** A lower-privileged user accesses functions reserved for higher-privileged accounts (such as an administrator)  
 **Horizontal privilege escalation:** A user accesses resources or data belonging to another user with the same privilege level.  
-In this lab, it belongs to **vertical privilege escalation**
-### Method-based access control  
-Method-based access control is a security mechanism that restricts access to specific endpoints based on the HTTP request method    
+In this lab, it belongs to **vertical privilege escalation**  
 ### Cookies  
 Cookies are small pieces of data stored by the browser and sent back to the server with every HTTP request. In web applications, session cookies are commonly used to maintain user state and identify who is making the request after authentication.  
-### `GET` and `POST` methods
-`GET` and `POST` are two of the most common HTTP request methods:  
-`GET` is intended to retrieve data from the server, with parameters typically passed in the URL query string.  
-`POST` is designed to submit data or trigger state-changing actions, sending parameters within the request body.  
 
 ## Steps  
 ### 1. Establish a baseline  
@@ -47,10 +41,7 @@ In Burp Suite, I came to sign-in request of **wiener** user
 I copied cookie session of **wiener** user   
 ![Wiener's cookie session](img/04-request2.png)  
 In the POST request, I changed the value of administrator's session cookie with cookie session of **wiener** user and the `username` parameter in the request body from `carlos` to `wiener`    
-After sending the modified request, the response returned `401 Unauthorized`  
-This meant the server properly checked permissions on `POST` requests  
-Then, I right-clicked on the request and chose `change method request` to switch it from `POST` to `GET`  
-![GET request](img/05-request3.png)
+![Modified request](img/05-request3.png)
 I sent the modified request.  
 I returned to the lab page and the lab was solved    
 ![Lab solved](img/06-lab-solved.png)
