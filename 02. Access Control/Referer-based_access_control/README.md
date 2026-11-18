@@ -42,10 +42,7 @@ Upgrading `wiener` directly from the `administrator` account is just normal admi
 In Burp Suite, I came to sign-in request of **wiener** user  
 I copied cookie session of **wiener** user   
 ![Wiener's cookie session](img/04-request2.png)  
-In the POST request, I changed the value of administrator's session cookie with cookie session of **wiener** user and the `username` parameter in the request body from `carlos` to `wiener`    
-After sending the modified request, the response returned `401 Unauthorized`  
-This meant the server properly checked permissions on `POST` requests  
-Then, I right-clicked on the request and chose `change method request` to switch it from `POST` to `GET`  
+In the GET request, I changed the value of administrator's session cookie with cookie session of **wiener** user and the `username` parameter in the request body from `carlos` to `wiener`      
 ![GET request](img/05-request3.png)
 I sent the modified request.  
 I returned to the lab page and the lab was solved    
