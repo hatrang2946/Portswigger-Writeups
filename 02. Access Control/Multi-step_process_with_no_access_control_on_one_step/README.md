@@ -1,7 +1,7 @@
 # Write-up: Multi-step process with no access control on one step  
 ![Homepage](img/01-homepage.png)  
 Lab-link: https://portswigger.net/web-security/access-control/lab-multi-step-process-with-no-access-control-on-one-step    
-Difficulty: Practitioner  
+Difficulty: Practitioner   
 Status: Solved  
 
 ## Lab description   
