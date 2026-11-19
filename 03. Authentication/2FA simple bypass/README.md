@@ -1,4 +1,4 @@
-<img width="1196" height="48" alt="image" src="https://github.com/user-attachments/assets/88d90616-52d0-4384-b3cd-02f054c6acb2" /># Write-up: 2FA simple bypass  
+# Write-up: 2FA simple bypass  
 ![Homepage](img/01-homepage.png)  
 Lab-link: https://portswigger.net/web-security/authentication/multi-factor/lab-2fa-simple-bypass
 Difficulty: Apprentice  
