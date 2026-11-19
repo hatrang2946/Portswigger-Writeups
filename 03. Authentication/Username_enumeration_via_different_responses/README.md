@@ -11,6 +11,8 @@ Status: Solved
 Find correct username and password in the given list 
 
 ## Background  
+[Candidate usernames](https://portswigger.net/web-security/authentication/auth-lab-usernames)
+[Candidate passwords](https://portswigger.net/web-security/authentication/auth-lab-passwords)
 
 
 ## Steps  
