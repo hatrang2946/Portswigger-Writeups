@@ -8,7 +8,7 @@ Status: Solved
 ![Lab description](img/02-lab-description.png)  
 
 ## Objectives  
-Find correct username and password in the given list 
+Find correct username and password in the provided list 
 
 ## Background  
 ### [Candidate usernames](https://portswigger.net/web-security/authentication/auth-lab-usernames)  
