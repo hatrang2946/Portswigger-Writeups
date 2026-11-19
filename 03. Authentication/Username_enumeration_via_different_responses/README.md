@@ -42,12 +42,13 @@ I clicked `clear §` on `username=§test§` and replaced `test` with `ao`
 Similar as finding username, I added § for `password=§123§`, used **Sniper attack**, cleared the old list and pasted the list of **candidate passwords**  
 ![Payload for username](img/06-payload-password.png)  
 After sending attack, the response with `password=123123` got status **302**, while the others got status **200**  
+![Right password](img/07-password.pg)
 Therefore, right password was `123123`  
 
 ### 4. Log in  
 I returned the lab page and used username and password which were found to log in  
 And the lab was solved  
-![Lab solved](img/07-lab-solved.png)
+![Lab solved](img/08-lab-solved.png)
 
 
 
