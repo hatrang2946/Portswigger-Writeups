@@ -12,9 +12,9 @@ Find correct username and password in the given list
 
 ## Background  
 ### [Candidate usernames](https://portswigger.net/web-security/authentication/auth-lab-usernames)  
-The list to find correct username  
+A list of potential usernames provided by PortSwigger  
 ### [Candidate passwords](https://portswigger.net/web-security/authentication/auth-lab-passwords)
-The list to find correct password  
+A list of potential passwords provided by PortSwigger  
 
 ## Steps  
 ### 1. Establish a baseline  
@@ -34,19 +34,23 @@ Payload type: `Simple list`
 I copy and paste the list of **candidate usernames**  
 ![Payload for username](img/04-payload-username.png)
 After sending attack, the length of the response with `username=ao` was 3354, while the others were 3352  
-Therefore, right username was `ao`  
-![Right username](img/05-username.png)  
+This difference indicated that the application responded differently when valid username was submitted
+Therefore, valid username was `ao`  
+![Valid username](img/05-username.png)  
 
 ### 3. Find correct password in the list   
 I clicked `clear §` on `username=§test§` and replaced `test` with `ao`  
 Similar as finding username, I added § for `password=§123§`, used **Sniper attack**, cleared the old list and pasted the list of **candidate passwords**  
 ![Payload for username](img/06-payload-password.png)  
 After sending attack, the response with `password=123123` got status **302**, while the others got status **200**  
-![Right password](img/07-password.png)
-Therefore, right password was `123123`  
+This indicated that the application responded differently when the correct password was submitted
+![Correct password](img/07-password.png)
+Therefore, correct password was `123123`  
 
 ### 4. Log in  
 I returned the lab page and used username and password which were found to log in  
+`Username: ao`  
+`Password: 123123`  
 And the lab was solved  
 ![Lab solved](img/08-lab-solved.png)
 
