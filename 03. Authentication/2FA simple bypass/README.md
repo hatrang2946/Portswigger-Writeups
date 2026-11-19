@@ -16,9 +16,9 @@ The application does not properly enforce the 2FA verification step before grant
 
 ## Steps  
 ### 1. Log in with `wiener` account  
-I used provided information to log in:
-`username: wiener`
-`password: peter`  
+I used provided information to log in:  
+`username: wiener`  
+`password: peter`   
 After logging in, I clicked **Email client** button and 2FA verification code was retrieved   
 ![Wiener's 2FA verification code](img/03-code.png)  
 I entered the code and successfully logged in as `wiener`  
@@ -27,9 +27,9 @@ I then inspected the account page URL, which was: `/my-account?id=wiener`
 
 
 ### 2. Log in with `carlos` account  
-Similar as Step 1
-I used provided information to log in:
-`username: carlos`
+Similar as Step 1  
+I used provided information to log in:  
+`username: carlos`  
 `password: montoya`  
 After logging in, I clicked **Email client** button and 2FA verification code was retrieved   
 ![Carlos's 2FA verification code](img/05-code2.png)  
