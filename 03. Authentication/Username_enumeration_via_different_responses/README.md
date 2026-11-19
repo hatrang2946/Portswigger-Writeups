@@ -32,7 +32,22 @@ I chose **Sniper attack** because there was only 1 payload position
 For the payload configuration:  
 Payload type: `Simple list`
 I copy and paste the list of **candidate usernames**  
-![Payload for username](img/04-username.png)
+![Payload for username](img/04-payload-username.png)
+After sending attack, the length of the response with `username=ao` was 3354, while the others were 3352  
+Therefore, right username was `ao`  
+![Right username](img/05-username.pg)  
+
+### 3. Find correct password in the list   
+I clicked `clear §` on `username=§test§` and replaced `test` with `ao`  
+Similar as finding username, I added § for `password=§123§`, used **Sniper attack**, cleared the old list and pasted the list of **candidate passwords**  
+![Payload for username](img/06-payload-password.png)  
+After sending attack, the response with `password=123123` got status **302**, while the others got status **200**  
+Therefore, right password was `123123`  
+
+### 4. Log in  
+I returned the lab page and used username and password which were found to log in  
+And the lab was solved  
+![Lab solved](img/07-lab-solved.png)
 
 
 
