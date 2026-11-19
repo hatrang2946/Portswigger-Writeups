@@ -35,14 +35,14 @@ I copy and paste the list of **candidate usernames**
 ![Payload for username](img/04-payload-username.png)
 After sending attack, the length of the response with `username=ao` was 3354, while the others were 3352  
 Therefore, right username was `ao`  
-![Right username](img/05-username.pg)  
+![Right username](img/05-username.png)  
 
 ### 3. Find correct password in the list   
 I clicked `clear §` on `username=§test§` and replaced `test` with `ao`  
 Similar as finding username, I added § for `password=§123§`, used **Sniper attack**, cleared the old list and pasted the list of **candidate passwords**  
 ![Payload for username](img/06-payload-password.png)  
 After sending attack, the response with `password=123123` got status **302**, while the others got status **200**  
-![Right password](img/07-password.pg)
+![Right password](img/07-password.png)
 Therefore, right password was `123123`  
 
 ### 4. Log in  
